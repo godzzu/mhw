@@ -10,6 +10,22 @@ top:50px !important;
 left: 0px !important;
 }
 
+#nav li ul {
+background: rgb(109,109,109);
+display:none;  /* 평상시에는 서브메뉴가 안보이게 하기 */
+height:auto;
+padding:0px;
+margin:0px;
+border:0px;
+position:absolute;
+width:200px;
+z-index:200;
+}
+
+#nav li:hover ul {
+display:block;   /* 마우스 커서 올리면 서브메뉴 보이게 하기 */
+}
+
 #body{
 clear:both;
 margin-left: 0px !important;
@@ -23,4 +39,4 @@ margin-left: 0px !important;
 height:140px !important;
 }
 
-	}
+}
