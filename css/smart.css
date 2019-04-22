@@ -5,7 +5,9 @@
 @media screen and (max-width: 750px){
 
 #nav {
-	
+position: absolute;
+top:50px !important;
+left: 0px !important;
 }
 
 #body{
@@ -14,9 +16,7 @@ margin-left: 0px !important;
 }
 
 #ad1{
-position: absolute;
-top:50px !important;
-left: 0px !important;
+
 }
 
 #header{
