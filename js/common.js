@@ -1,4 +1,4 @@
 
 	function menu_set(){
-		$("#nav").load('../left_menu.html');
+		$("#nav").load('../monster/left_menu.html');
 	}
