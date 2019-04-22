@@ -5,7 +5,7 @@ margin: 0px;
 padding: 0px;
 }
 
-#nav,#body,table,form,input,textarea,small{
+#body,table,form,input,textarea,small{
 line-height:1.4em;
 }
 
@@ -29,7 +29,7 @@ text-decoration:none;
 }
 
 #nav{
-height:50px;
+height:30px;
 border-bottom:solid 1px #ccc;
 background-color:rgb(205, 205, 205);
 color:white;

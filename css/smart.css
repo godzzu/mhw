@@ -6,8 +6,10 @@
 
 #nav {
 position: absolute;
-top:50px !important;
-left: 0px !important;
+height:30px;
+border-bottom:solid 1px #ccc;
+background-color:rgb(205, 205, 205);
+color:white;
 }
 
 #nav li ul {
