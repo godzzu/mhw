@@ -1,37 +1,48 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/godzzu/mhw/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="viewport" content="width=device, initial-scale=1.0">
+<title>JABONGDAN</title>
+<style type="text/css">
+.table{
+text-align: center;
+}
+.niku_td{
+width:38px;
+text-align: center;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/smart.css">
+<link rel="stylesheet" type="text/css" href="../css/1.10.0.jquery-ui.css">
+<script src="../js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="../js/jquery-ui.js" type="text/javascript"></script>
+<script src="../js/tablecloth.js" type="text/javascript"></script>
+<script src="../js/common.js" type="text/javascript"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		menu_set();
+	});
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+</script>
+</head>
+<body>		
+	<div id="container"><!--footerへ-->
+<div id="header">
+	<h1>JABONGDAN_ALPHA</h1>
+<div id="ad1">
+	
+</div>
+</div>
+<div id="nav">
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/godzzu/mhw/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+</div>
+<div id="body">  
+	<img src="../images/logo.jpg"/>
+</div>
+</body>
+</html>
