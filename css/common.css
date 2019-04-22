@@ -130,7 +130,6 @@ border-left:solid 1px;
 }
 */
 #body{
-text-align: center;
 padding: 2px;
 padding-top: 2px;
 margin-right:5px;
@@ -495,9 +494,7 @@ width:100%;
 overflow: auto;
 }
 .niku{
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
+text-align: center;
 /*width:100%;*/
 }
 .sp_table_scroll::-webkit-scrollbar{
