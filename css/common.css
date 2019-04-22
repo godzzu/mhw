@@ -41,7 +41,7 @@ font-weight:bold;
 .menubar ul{
 background: rgb(109,109,109);
 height:50px;
-list-style:none;
+list-style-type:none;
 margin:0;
 padding:0;
 }
