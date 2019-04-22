@@ -95,7 +95,7 @@ text-align: center;
 <div id="body">
 <h1>마수 베히모스</h1>
 
-<img src="../WebContent/images/bg_50.jpg"/>
+<img src="../WebContent/image/bg_50.jpg"/>
 
 <br /><h2>육질표</h2><br />
 <div class="sp_table_scroll">
