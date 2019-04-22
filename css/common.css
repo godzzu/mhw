@@ -490,6 +490,7 @@ height: auto !important;
 
 
 .sp_table_scroll {
+width:100%;
 overflow: auto;
 }
 .sp_table_scroll table{
