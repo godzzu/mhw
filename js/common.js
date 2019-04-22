@@ -4,7 +4,6 @@
 	}
 
 	function moster_info(path){
-		alert(path);
 		$("#body").children().remove();
 		$("#body").load('../monster/'+path+'.html');
 	}
