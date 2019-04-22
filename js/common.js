@@ -6,4 +6,5 @@
 	function moster_info(path){
 		$("#body").children().remove();
 		$("#body").load('../monster/'+path+'.html');
+		$(".menubar > ul > li > ul").css("display","none");
 	}
