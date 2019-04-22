@@ -492,6 +492,7 @@ height: auto !important;
 overflow: auto;
 }
 .sp_table_scroll table{
+	text-align: center;
 /*width:100%;*/
 }
 .sp_table_scroll::-webkit-scrollbar{
