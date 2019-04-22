@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+
+   /* スマホ用 */
+
+@media screen and (max-width: 750px){
+
+#nav {
+display: none;
+}
+
+#body{
+clear:both;
+margin-left: 0px !important;
+}
+
+#ad1{
+position: absolute;
+top:50px !important;
+left: 0px !important;
+}
+
+#header{
+height:140px !important;
+}
+
+	}
