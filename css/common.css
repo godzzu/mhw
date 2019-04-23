@@ -97,6 +97,10 @@ padding:0px;
 width:200px;
 }
 
+.menubar li li a{
+color:#000000;
+}
+
 .menubar li:hover li a{
 background:none;
 }
