@@ -3,7 +3,7 @@
 		$("#nav").load('../monster/left_menu.html');
 	}
 
-	function info(path){
+	function monster_info(path){
 		$("#body").children().remove();
 		$("#body").load('../monster/'+path+'.html');
 	}
