@@ -64,7 +64,7 @@ color:#FFFFFF;
 text-decoration:none;
 }
 
-.menubar ul li:hover a{
+.menubar ul li:hover{
 background: #3678a7;
 color:#FFFFFF;
 text-decoration:none;
