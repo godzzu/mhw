@@ -58,7 +58,13 @@ text-align:center;
 text-decoration:none;
 }
 
-.menubar li a:hover, .menubar ul li:hover a{
+.menubar li a:hover{
+background: #3678a7;
+color:#FFFFFF;
+text-decoration:none;
+}
+
+.menubar ul li:hover a{
 background: #3678a7;
 color:#FFFFFF;
 text-decoration:none;
@@ -89,6 +95,7 @@ float:none;
 margin:0px;
 padding:0px;
 width:200px;
+color:#000000;
 }
 
 .menubar li:hover li a{
