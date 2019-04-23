@@ -94,11 +94,11 @@ background:none;
 }
 
 .menubar li ul a{
-color:black;
 display:block;
 height:50px;
 font-size:12px;
 font-style:normal;
+color:black;
 margin:0px;
 padding:0px 10px 0px 15px;
 text-align:left;
