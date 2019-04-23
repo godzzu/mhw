@@ -5,7 +5,7 @@
 @media screen and (max-width: 750px){
 
 #container{
-clear:both;
+max-width:750px;
 margin-left:0px !important;
 }
 
