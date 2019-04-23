@@ -88,7 +88,7 @@ z-index:200;
 display:block; /* 마우스 커서 올리면 드랍메뉴 보이게 하기 */
 }
 
-.menubar li li {
+.menubar li li a{
 background: #ecf7ff;
 color:#000000;
 display:block;
