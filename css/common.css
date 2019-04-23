@@ -59,20 +59,20 @@ text-decoration:none;
 }
 
 .menubar li a:hover{
-background: #3678a7;
-color:#FFFFFF;
+background: #82bce6;
+color:#000000;
 text-decoration:none;
 }
 
-.menubar ul li:hover{
-background: #3678a7;
-color:#FFFFFF;
+.menubar ul li:hover a{
+background: #82bce6;
+color:#000000;
 text-decoration:none;
 }
 
 .menubar li ul{
 background: #ecf7ff;
-/*display:none;*/ /* 평상시에는 드랍메뉴가 안보이게 하기 */
+display:none; /* 평상시에는 드랍메뉴가 안보이게 하기 */
 height:auto;
 padding:0px;
 margin:0px;
@@ -115,9 +115,9 @@ color:#000000;
 }
 
 .menubar li ul a:hover, .menubar li ul li:hover a{
-background: #3678a7;
+background: #82bce6;
 border:0px;
-color:#ffffff;
+color:#000000;
 text-decoration:none;
 }
 
