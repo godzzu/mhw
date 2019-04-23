@@ -88,14 +88,13 @@ z-index:200;
 display:block; /* 마우스 커서 올리면 드랍메뉴 보이게 하기 */
 }
 
-.menubar li li a{
+.menubar li ul li a{
 background: #ecf7ff;
 color:#000000;
 display:block;
 float:none;
 margin:0px;
 padding:0px;
-width:200px;
 }
 
 .menubar li:hover li a{
