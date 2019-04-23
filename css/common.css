@@ -1,5 +1,8 @@
 @CHARSET "UTF-8";
 
+
+@media screen{
+
 *{
 margin: 0px;
 padding: 0px;
@@ -153,7 +156,8 @@ margin-top:10px;
 width:1000px;
 margin-left:250px;
 margin-right:250px;
-}
+} 
+
 
 .AA{
 font-family:"모나고딕","MS PGothic","Mona","mona-gothic-jisx0208.1990-0",sans-serif;
@@ -454,6 +458,7 @@ color:green;
 padding-left:3px;
 }
 
+}
 
 
 @media screen and (max-width: 750px){
@@ -516,4 +521,4 @@ white-space: nowrap;
 }
 
 
-	}
+}
