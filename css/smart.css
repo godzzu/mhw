@@ -2,10 +2,10 @@
 
    /* スマホ用 */
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 750px){
 
 #container{
-max-width:320px;
+max-width:750px;
 clear:both;
 margin-left:0px !important;
 }
