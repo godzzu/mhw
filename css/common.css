@@ -88,6 +88,14 @@ z-index:200;
 display:block; /* 마우스 커서 올리면 드랍메뉴 보이게 하기 */
 }
 
+.menubar li li {
+background: #ecf7ff;
+display:block;
+float:none;
+margin:0px;
+padding:0px;
+width:200px;
+}
 
 .menubar li:hover li a{
 background:none;
@@ -98,10 +106,10 @@ display:block;
 height:50px;
 font-size:12px;
 font-style:normal;
-color:black;
 margin:0px;
 padding:0px 10px 0px 15px;
 text-align:left;
+color:#000000;
 }
 
 .menubar li ul a:hover, .menubar li ul li:hover a{
@@ -127,7 +135,6 @@ border-left:solid 1px;
 padding: 2px;
 padding-top: 2px;
 margin-right:5px;
-text-align:center;
 
 }
 
