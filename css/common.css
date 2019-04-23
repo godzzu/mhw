@@ -112,10 +112,17 @@ text-align:left;
 color:#000000;
 }
 
-.menubar li ul a:hover, .menubar li ul li:hover a{
+.menubar li ul a:hover{
 background: #3678a7;
 border:0px;
 color:#ffffff;
+text-decoration:none;
+}
+
+.menubar li ul li:hover a{
+background: #3678a7;
+border:0px;
+color:#000000;
 text-decoration:none;
 }
 
