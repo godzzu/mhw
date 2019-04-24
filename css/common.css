@@ -246,6 +246,30 @@ table.tablesorter thead tr th{
 	white-space:nowrap;
 }
 
+table.tablesorter tbody td {
+	color: #222222;
+	padding: 6px;
+	background-color: #FFF;
+	vertical-align: top;cursor: pointer;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	border-bottom: 1px solid #fff
+}
+table.tablesorter tbody tr.odd td {
+	background-color:#F0F0F6; cursor: pointer;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+background-color: #8dbdd8;
+}
+
 table.tablesorter tbody tr.even td{background:#F0F0F6;}
 table.tablesorter tbody tr.odd td{background:#f8fbfc;}
 
