@@ -250,19 +250,29 @@ table.tablesorter tbody tr th {
 	cursor: pointer; 
 	text-align: center; 
 }
-table.tablesorter tbody td {
+/*table.tablesorter tbody td {
 	color: #3D3D3D;
 	padding: 6px;
 	background-color: #FFF;
 	vertical-align: top;
 	cursor: pointer;
 	text-align: center;
-}
+}*/
 table.tablesorter tbody tr.odd td{
-	background-color:#CEF6E3; cursor: pointer;
+	color: #3D3D3D;
+	padding: 6px;
+	background-color:#CEF6E3; 
+	vertical-align: top;
+	cursor: pointer;
+	text-align: center;
 }
 table.tablesorter tbody tr.even td{
-	background-color:#CEF6E3; cursor: pointer;
+	color: #3D3D3D;
+	padding: 6px;
+	background-color:#CEF6E3; 
+	vertical-align: top;
+	cursor: pointer;
+	text-align: center;
 }
 table.tablesorter thead tr .headerSortUp {
 	background-image: url(asc.gif);
