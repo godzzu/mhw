@@ -253,7 +253,7 @@ table.tablesorter tbody tr th {
 table.tablesorter tbody td {
 	color: #3D3D3D;
 	padding: 6px;
-	background-color: #FFF;
+	/*background-color: #FFF;*/
 	vertical-align: top;
 	cursor: pointer;
 	text-align: center;
