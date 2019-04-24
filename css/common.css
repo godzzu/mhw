@@ -178,7 +178,7 @@ margin-top:5px;
 margin-bottom:5px;
 }
 
-table{
+/*table{
 border-collapse: collapse;
 border: 1px solid #000000;
 }
@@ -204,7 +204,7 @@ color:white;
 table a{
 text-decoration: none;
 line-height:1.0em;
-}
+}*/
 
 li{
 list-style-position: inside;
