@@ -215,7 +215,7 @@ padding:auto;
 
 /*테이블 */
 table.tablesorter {
-	background-color: #CDCDCD;
+	background-color: #ccc;
 	margin:0;
 	font-size: 12px;
 	width: 100%;
@@ -235,13 +235,13 @@ table.tablesorter tfoot tr th {
 	white-space:nowrap;
 }
 table.tablesorter thead tr th{
-	background-color:#DEE3EC;
+	background-color:#b8f7f8;
 	border-bottom: 1px solid #fff; 
-	font-size: 12px;
+	font-size: 14px;
 	padding: 6px; 
-	height: 16px;
+	height: 18px;
 	cursor: pointer; 
-	text-align: left; 
+	text-align: center; 
 	text-overflow:ellipsis;
 	white-space:nowrap;
 }
