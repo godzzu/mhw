@@ -43,6 +43,8 @@ this.tablecloth = function(){
 	this.start = function(){
 		console.log("start tablecloth");
 		var tables = document.getElementsByName("mainTable");
+
+		console.log(tables.length);
 		for (var i=0;i<tables.length;i++){
 			tables[i].onmouseover = function(){tableover = true};
 			tables[i].onmouseout = function(){tableover = false};			
