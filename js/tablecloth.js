@@ -14,7 +14,7 @@ this.tablecloth = function(){
 	var highlightCols = false;
 	
 	// if set to true then mouseover a table cell will highlight entire row	(except sibling headings)
-	var highlightRows = true;	
+	var highlightRows = false;	
 	
 	// if set to true then click on a table sell will select row or column based on config
 	var selectable = true;
@@ -70,6 +70,7 @@ this.tablecloth = function(){
 				arr[j].col = j;
 				if(arr[j].innerHTML == "&nbsp;" || arr[j].innerHTML == "") arr[j].className += "";					
 				arr[j].css = arr[j].className;
+				console.log("tablecloth arr.css :" + arr[j].css);
 				arr[j].onmouseover = function(){
 					over(table,this,this.row,this.col);
 				};
