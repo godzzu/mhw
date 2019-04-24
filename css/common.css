@@ -155,6 +155,11 @@ margin-right:auto;
 margin-left:auto;
 } 
 
+.niku{
+	max-width:500px;
+	margin-left:auto;
+	margin-right:auto;
+}
 
 .AA{
 font-family:"모나고딕","MS PGothic","Mona","mona-gothic-jisx0208.1990-0",sans-serif;
