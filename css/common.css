@@ -253,15 +253,15 @@ table.tablesorter tbody tr th {
 table.tablesorter tbody td {
 	color: #3D3D3D;
 	padding: 6px;
-	/*background-color: #FFF;*/
+	background-color: #FFF;
 	vertical-align: top;
 	cursor: pointer;
 	text-align: center;
 }
-table.tablesorter tbody tr.odd {
-	background-color:#EFFBF5; cursor: pointer;
+table.tablesorter tbody tr.odd td{
+	background-color:#CEF6E3; cursor: pointer;
 }
-table.tablesorter tbody tr.even {
+table.tablesorter tbody tr.even td{
 	background-color:#CEF6E3; cursor: pointer;
 }
 table.tablesorter thead tr .headerSortUp {
