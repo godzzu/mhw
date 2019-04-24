@@ -53,6 +53,7 @@ this.tablecloth = function(){
 	this.rows = function(table){
 		var css = "";
 		var tr = table.getElementsByTagName("tr");
+		console.log("tablecloth tr :" + tr);
 		for (var i=0;i<tr.length;i++){
 			css = (css == "odd") ? "even" : "odd";
 			tr[i].className = css;
