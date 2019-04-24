@@ -258,11 +258,11 @@ table.tablesorter tbody td {
 	cursor: pointer;
 	text-align: center;
 }
-table.tablesorter tbody tr.odd td {
-	background:#EFFBF5; cursor: pointer;
+table.tablesorter tbody tr.odd {
+	background-color:#EFFBF5; cursor: pointer;
 }
-table.tablesorter tbody tr.even td {
-	background:#CEF6E3; cursor: pointer;
+table.tablesorter tbody tr.even {
+	background-color:#CEF6E3; cursor: pointer;
 }
 table.tablesorter thead tr .headerSortUp {
 	background-image: url(asc.gif);
