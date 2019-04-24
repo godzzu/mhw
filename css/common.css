@@ -259,10 +259,10 @@ table.tablesorter tbody td {
 	text-align: center;
 }
 table.tablesorter tbody tr.odd td {
-	background-color:#EFFBF5; cursor: pointer;
+	background:#EFFBF5; cursor: pointer;
 }
 table.tablesorter tbody tr.even td {
-	background-color:#CEF6E3; cursor: pointer;
+	background:#CEF6E3; cursor: pointer;
 }
 table.tablesorter thead tr .headerSortUp {
 	background-image: url(asc.gif);
