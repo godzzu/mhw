@@ -1,19 +1,19 @@
 
 	function menu_set(){
-		$("#nav").load('./monster/left_menu.html');
+		$("#nav").load('../monster/left_menu.html');
 	}
 
 	function monster_info(path){
 		$("#body").children().remove();
-		$("#body").load('./monster/'+path+'.html');
+		$("#body").load('../monster/'+path+'.html');
 	}
 
 	function area_info(path){
 		$("#body").children().remove();
-		$("#body").load('./area/'+path+'.html');
+		$("#body").load('../area/'+path+'.html');
 	}
 
 	function weapon_info(path){
 		$("#body").children().remove();
-		$("#body").load('./weapon/'+path+'.html');
+		$("#body").load('../weapon/'+path+'.html');
 	}
