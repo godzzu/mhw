@@ -231,34 +231,26 @@ table.tablesorter tfoot tr th {
 	padding: 6px; 
 	height: 16px;
 	cursor: pointer;
-	text-overflow:ellipsis;
-	white-space:nowrap;
 }
 table.tablesorter thead tr th{
-	background-color:#b8f7f8;
-	border-bottom: 1px solid #fff; 
-	font-size: 14px;
+	background-color:#e6EEEE;
+	border-bottom: 1px solid #ddd; 
+	font-size: 12px;
 	padding: 6px; 
-	height: 18px;
+	height: 16px;
 	cursor: pointer; 
 	text-align: center; 
-	text-overflow:ellipsis;
-	white-space:nowrap;
 }
 
 table.tablesorter tbody td {
-	color: #222222;
+	color: #3D3D3D;
 	padding: 6px;
 	background-color: #FFF;
-	vertical-align: top;cursor: pointer;
-	text-overflow:ellipsis;
-	white-space:nowrap;
-	border-bottom: 1px solid #fff
+	vertical-align: top;
+	cursor: pointer;
 }
 table.tablesorter tbody tr.odd td {
 	background-color:#F0F0F6; cursor: pointer;
-	text-overflow:ellipsis;
-	white-space:nowrap;
 }
 table.tablesorter thead tr .headerSortUp {
 	background-image: url(asc.gif);
@@ -278,7 +270,7 @@ table.tablesorter tbody th.down, table.tablesorter tbody tr.even th.down, table.
 table.tablesorter tbody th.selected, table.tablesorter tbody tr.even th.selected, table.tablesorter tbody tr.odd th.selected{}
 
 table.tablesorter tbody td.over, table.tablesorter tbody tr.even td.over, table.tablesorter tbody tr.odd td.over{background:#ecfbd4;}
-table.tablesorter tbody td.down, table.tablesorter tbody tr.even td.down, table.tablesorter tbody tr.odd td.down{background:#bce774;color:#fff;}
+table.tablesorter tbody td.down, table.tablesorter tbody tr.even td.down, table.tablesorter tbody tr.odd td.down{background:#bce774;color:#000;}
 table.tablesorter tbody td.selected, table.tablesorter tbody tr.even td.selected, table.tablesorter tbody tr.odd td.selected{background:#bce774;color:#555; }
 
 /* use this if you want to apply different styleing to empty table cells*/
