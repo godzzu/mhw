@@ -58,7 +58,7 @@ this.tablecloth = function(){
 		var tr = table.getElementsByTagName("tr");
 		console.log("tablecloth tr :" + tr.length);
 		for (var i=0;i<tr.length;i++){
-			css = (css == "odd") ? "even" : "odd";
+			css = (css == "class='odd'") ? "class='even'" : "class='odd'";
 			tr[i].className = css;
 			var arr = new Array();
 			for(var j=0;j<tr[i].childNodes.length;j++){				
