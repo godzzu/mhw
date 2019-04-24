@@ -64,6 +64,7 @@ this.tablecloth = function(){
 			for(var j=0;j<tr[i].childNodes.length;j++){				
 				if(tr[i].childNodes[j].nodeType == 1) arr.push(tr[i].childNodes[j]);
 			};		
+			console.log("tablecloth arr :" + arr.length);
 			for (var j=0;j<arr.length;j++){				
 				arr[j].row = i;
 				arr[j].col = j;
