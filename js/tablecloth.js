@@ -47,7 +47,8 @@ this.tablecloth = function(){
 		console.log(tables.length);
 		for (var i=0;i<tables.length;i++){
 			tables[i].onmouseover = function(){tableover = true};
-			tables[i].onmouseout = function(){tableover = false};			
+			tables[i].onmouseout = function(){tableover = false};	
+			console.log(tables[i]);
 			rows(tables[i]);
 		};
 	};
@@ -55,7 +56,7 @@ this.tablecloth = function(){
 	this.rows = function(table){
 		var css = "";
 		var tr = table.getElementsByTagName("tr");
-		console.log("tablecloth tr :" + tr);
+		console.log("tablecloth tr :" + tr.length);
 		for (var i=0;i<tr.length;i++){
 			css = (css == "odd") ? "even" : "odd";
 			tr[i].className = css;
