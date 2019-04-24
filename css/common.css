@@ -224,7 +224,7 @@ table.tablesorter {
 	
 }
 
-table.tablesorter tfoot tr th {
+table.tablesorter tbody tr th {
 	background-color: #e6EEEE;
 	border: 1px solid #ddd;
 	font-size: 12px;

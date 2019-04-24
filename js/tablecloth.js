@@ -145,6 +145,7 @@ this.tablecloth = function(){
 				if(tr[i].childNodes[j].nodeType == 1) arr.push(tr[i].childNodes[j])
 			};				
 			var obj = arr[col];
+			console.log(obj);
 			if(check3(obj)) obj.className = obj.css; 
 		};
 	};	
