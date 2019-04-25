@@ -20,10 +20,6 @@ clear:both;
 margin-left: 0px !important;
 }
 
-#ad1{
-
-}
-
 #header{
 height:100px !important;
 }
@@ -34,7 +30,8 @@ height:50px !important;
 
 /* 무기 배율표 이미지 */
 table .weapons_thumb{
-	max-width:100%;
+	width:50px !important;
+	height:50px !important;
 }
 
 }

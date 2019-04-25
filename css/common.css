@@ -298,40 +298,13 @@ table .weapons_thumb{
 *{
 line-height:26px !important;
 }
-
-#header{
-height:50px !important;
-}
-
-
-.youto_table1{
-width:100% !important;
-}
-
-.youto_table2{
-width:100% !important;
-}
-
-.youto_table3{
-width:100% !important;
-}
-
-#sozai_t1{
-float:none;
-}
-#sozai_t2{
-float:none;
-}
-#sozai_t3{
-float:none;
-}
-
+/*
 img{
 max-width: 100% !important;
 height: auto !important;
 }
 
-
+*/
 .sp_table_scroll {
 width:100%;
 overflow: auto;
@@ -354,4 +327,4 @@ white-space: nowrap;
 }
 
 
-	}
+}
