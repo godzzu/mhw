@@ -30,7 +30,7 @@ height:50px !important;
 
 /* 무기 배율표 */
 table td.fixed_width{
-	width: 12%;
+	width: 10% !important;
 	font-size:12px;
 }
 table .weapons_thumb{
