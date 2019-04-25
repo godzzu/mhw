@@ -31,7 +31,7 @@ text-decoration:none;
 	
 	#menu {
 		width: 960px;
-		margin: 60px auto;
+		margin: 10px auto;
 		border: 1px solid #222;
 		background-color: #111;
 		background-image: -moz-linear-gradient(#444, #111); 
@@ -259,7 +259,7 @@ text-decoration:none;
 
 .menubar li ul{
 background: #ecf7ff;
-display:none; /* 평상시에는 드랍메뉴가 안보이게 하기 */
+display:none;
 height:auto;
 padding:0px;
 margin:0px;
@@ -268,12 +268,10 @@ position:absolute;
 width:200px;
 z-index:200;
 color:#000000;
-/*top:1em;
-/*left:0;*/
 }
 
 .menubar li:hover ul{
-display:block; /* 마우스 커서 올리면 드랍메뉴 보이게 하기 */
+display:block;
 }
 
 .menubar li li {
