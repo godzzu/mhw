@@ -28,10 +28,13 @@ height:100px !important;
 height:50px !important;
 }
 
-/* 무기 배율표 이미지 */
+/* 무기 배율표 */
+table .fixed_width{
+	width: 12%;
+}
 table .weapons_thumb{
-	width:50px !important;
-	height:50px !important;
+	width:40px !important;
+	height:40px !important;
 }
 
 }

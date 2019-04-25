@@ -288,7 +288,10 @@ table.tablesorter tbody td.selected, table.tablesorter tbody tr.even td.selected
 /* use this if you want to apply different styleing to empty table cells*/
 table.tablesorter tbody td.empty, table.tablesorter tbody tr.odd td.empty, table.tablesorter tbody tr.even td.empty{background:#fff;}
 
-/* 무기 배율표 이미지 */
+/* 무기 배율표 */
+table .fixed_width{
+	width: 12%;
+}
 table .weapons_thumb{
 	width: 60px;
 	height: 60px;
@@ -303,7 +306,6 @@ img{
 max-width: 100% !important;
 height: auto !important;
 }
-
 */
 .sp_table_scroll {
 width:100%;
