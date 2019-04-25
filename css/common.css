@@ -288,8 +288,13 @@ table.tablesorter tbody td.selected, table.tablesorter tbody tr.even td.selected
 /* use this if you want to apply different styleing to empty table cells*/
 table.tablesorter tbody td.empty, table.tablesorter tbody tr.odd td.empty, table.tablesorter tbody tr.even td.empty{background:#fff;}
 
+/* 무기 배율표 이미지 */
+table .weapons_thumb{
+	width: 60px;
+	height: 60px;
+}
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 500px){
 *{
 line-height:26px !important;
 }
