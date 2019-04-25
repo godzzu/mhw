@@ -121,6 +121,34 @@ color:#000000;
 text-decoration:none;
 }
 
+.menubar li li li{
+background: #ecf7ff;
+display:block;
+float:none;
+margin:0px;
+padding:0px;
+width:200px;
+color:#000000;
+}
+
+.menubar li li ul a{
+display:block;
+height:50px;
+font-size:12px;
+font-style:normal;
+margin:0px;
+padding:0px 10px 0px 15px;
+text-align:left;
+color:#000000;
+}
+
+.menubar li li ul a:hover, .menubar li li ul li:hover a{
+background: #82bce6;
+border:0px;
+color:#000000;
+text-decoration:none;
+}
+
 .menubar p{
 clear:left;
 }
@@ -177,34 +205,6 @@ line-height: 24px;
 margin-top:5px;
 margin-bottom:5px;
 }
-
-/*table{
-border-collapse: collapse;
-border: 1px solid #000000;
-}
-
-tr{
-padding: 1px;
-border: 1px solid #000000;
-}
-
-td{
-padding: 2px;
-font-size: 18px;
-border: 1px solid #000000;
-}
-
-th{
-padding: 2px;
-border: 1px solid #000000;
-background-color:#0e1f5e;
-color:white;
-}
-
-table a{
-text-decoration: none;
-line-height:1.0em;
-}*/
 
 li{
 list-style-position: inside;
