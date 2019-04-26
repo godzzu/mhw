@@ -355,36 +355,15 @@ table .weapons_thumb{
 	height: 60px;
 }
 
-@media screen and (max-width: 500px){
-*{
-line-height:26px !important;
+
+/* 무기정보 */
+#weapon_div{
+	width:900px; 
+	height:510px; 
+	margin-left:30px;
 }
 
-img{
-max-width: 100% !important;
-height: auto !important;
-}
-
-.sp_table_scroll {
-width:100%;
-overflow: auto;
-}
-.niku{
-text-align: center;
-/*width:100%;*/
-}
-.sp_table_scroll::-webkit-scrollbar{
-height: 5px;
-}
-.sp_table_scroll::-webkit-scrollbar-track{
-background: #F1F1F1;
-}
-.sp_table_scroll::-webkit-scrollbar-thumb {
-background: #d6d6d6;
-}
-.sp_table_scroll td, .sp_table_scroll th{
-white-space: nowrap;
-}
-
-
+#weapons_video{
+	width:900px;
+	height:506px;
 }
