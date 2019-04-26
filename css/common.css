@@ -69,6 +69,7 @@ text-decoration:none;
 		-webkit-box-shadow: 1px 0 0 #444;
 		box-shadow: 1px 0 0 #444;
 		position: relative;
+		width:20%;
 	}
 	
 	#menu a {
@@ -90,7 +91,7 @@ text-decoration:none;
 	}
 	
 	#menu ul {
-		margin: 20px 0 0 0;
+		margin: 0 0 0 0;
 		_margin: 0; /*IE6 only*/
 		opacity: 0;
 		visibility: hidden;
