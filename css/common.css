@@ -354,6 +354,10 @@ table .weapons_thumb{
 	width: 60px;
 	height: 60px;
 }
+table .weapons_sharpness{
+	width:120px;
+	height:20px;
+}
 
 
 /* 무기정보 */
