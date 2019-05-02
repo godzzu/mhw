@@ -264,6 +264,14 @@ margin-top:5px;
 margin-bottom:5px;
 }
 
+h4{
+border-bottom:double 2px rgb(70, 70, 70);
+font-size: 1.0em;
+line-height: 20px;
+margin-top:5px;
+margin-bottom:5px;
+}
+
 li{
 list-style-position: inside;
 margin:auto;
