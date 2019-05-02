@@ -311,7 +311,7 @@ table.tablesorter tbody tr th {
 table.tablesorter tbody td {
 	color: #3D3D3D;
 	padding: 6px;
-	background-color: #FFF;
+	background-color: #000;
 	vertical-align: top;
 	cursor: pointer;
 	text-align: center;
@@ -344,7 +344,7 @@ table.tablesorter tbody td.down, table.tablesorter tbody tr.even td.down, table.
 table.tablesorter tbody td.selected, table.tablesorter tbody tr.even td.selected, table.tablesorter tbody tr.odd td.selected{background:#bce774;color:#555; }
 
 /* use this if you want to apply different styleing to empty table cells*/
-table.tablesorter tbody td.empty, table.tablesorter tbody tr.odd td.empty, table.tablesorter tbody tr.even td.empty{background:#fff;}
+table.tablesorter tbody td.empty, table.tablesorter tbody tr.odd td.empty, table.tablesorter tbody tr.even td.empty{background:#000;}
 
 /* 무기 배율표 */
 table td.fixed_width{
