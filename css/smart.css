@@ -67,6 +67,11 @@
 		height:30px !important;
 	}
 
+	table .insect_mark{
+	width:20px !important;
+	height:20px !important;
+	}
+
 	/* 무기정보 */
 	#weapon_div{
 		width:510px; 
