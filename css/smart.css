@@ -66,6 +66,14 @@
 		width:30px !important;
 		height:30px !important;
 	}
+	table .light_bowgun_img{
+		width:25px !important;
+		height:25px !important;
+	}
+	table .light_bowgun_distance{
+		width:25px !important;
+		height:25px !important;
+	}
 
 	/* 무기정보 */
 	#weapon_div{

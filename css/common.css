@@ -369,6 +369,14 @@ table .insect_mark{
 	width:20px;
 	height:20px;
 }
+table .light_bowgun_img{
+	width:30px;
+	height:30px;
+}
+table .light_bowgun_distance{
+	width:30px;
+	height:30px;
+}
 
 
 /* 무기정보 */
@@ -382,3 +390,4 @@ table .insect_mark{
 	width:900px;
 	height:506px;
 }
+
