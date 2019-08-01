@@ -410,13 +410,13 @@ table .bowgun_distance{
 
 /* 무기정보 */
 #weapon_div{
-	width:900px; 
-	height:510px; 
-	margin-left:40px;
+	width:750px; 
+	height:400px; 
+	margin-left:10px;
 }
 
 #weapons_video{
-	width:900px;
-	height:506px;
+	width:750px;
+	height:395px;
 }
 
