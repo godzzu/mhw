@@ -44,10 +44,12 @@
 		height:950px;
 		display:inline-block;
 		float:left;
-		font: 9px;
 	}
 	#menu a {
-		font: bold 9px;
+		text-transform: uppercase;
+		font: bold 8px Arial, Helvetica;
+		text-decoration: none;
+		text-shadow: 0 1px 0 #000;
 	}
 	#body{
 		width:80% !important;
