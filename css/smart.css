@@ -48,7 +48,15 @@
 		clear:both;
 		margin-left: 0px !important;
 	}
-
+	.menubar{
+		width:180px;
+		height:950px;
+		display:inline-block;
+	}
+	.content{
+		display:inline-block;
+		vertical-align: top;
+	}
 	#header{
 		height:100px !important;
 	}
@@ -77,14 +85,14 @@
 
 	/* 무기정보 */
 	#weapon_div{
-		width:510px; 
-		height:280px; 
+		width:300px; 
+		height:190px; 
 		margin-left:5px;
 	}
 
 	#weapons_video{
-		width:500px !important;
-		height:270px !important;
+		width:300px !important;
+		height:180px !important;
 	}
 
 }
