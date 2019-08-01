@@ -153,6 +153,7 @@ flex-wrap:wrap;
 	
 	#menu ul li {
 		float: none;
+		width:100%;
 		display: block;
 		border: 0;
 		_line-height: 0; /*IE6 only*/
