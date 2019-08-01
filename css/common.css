@@ -27,6 +27,7 @@ text-decoration:none;
 	width:200px;
 	height:950px;
 	display:inline-block;
+	float:left;
 }
 
 ul{
