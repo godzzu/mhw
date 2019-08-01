@@ -45,7 +45,6 @@ overflow:auto;
 	#menu {
 		margin: 10px;
 		width:180px;
-		height:750px;
 		border: 1px solid #222;
 		background-color: #111;
 		background-image: -moz-linear-gradient(#444, #111); 
@@ -86,7 +85,7 @@ overflow:auto;
 		-moz-box-shadow: 1px 0 0 #444;
 		-webkit-box-shadow: 1px 0 0 #444;
 		box-shadow: 1px 0 0 #444;
-		position:absolute;
+		position:relative;
 	}
 	
 	#menu a {
