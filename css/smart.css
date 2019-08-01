@@ -49,7 +49,7 @@
 		margin-left: 0px !important;
 	}
 	.menubar{
-		width:150px;
+		width:140px;
 		display:none;
 	}
 	.content{
@@ -57,8 +57,8 @@
 		vertical-align: top;
 	}
 	.content img{
-		width:400px;
-		height:240px;
+		width:350px;
+		height:210px;
 	}
 	#header{
 		height:100px !important;
