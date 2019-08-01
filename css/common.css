@@ -78,6 +78,7 @@ overflow:auto;
 	
 	#menu li {
 		width:180px;
+		height:30px;
 		float: left;
 		border-bottom: 1px solid #222;
 		-moz-box-shadow: 1px 0 0 #444;
