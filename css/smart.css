@@ -50,7 +50,7 @@
 	}
 	.menubar{
 		width:150px;
-		display:none;
+		display:inline-block;
 	}
 	.content{
 		display:inline-block;
