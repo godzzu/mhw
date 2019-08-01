@@ -193,8 +193,8 @@ flex-wrap:wrap;
 	}
 	
 	#menu ul li:first-child > a:after {
-		content: '';
-		position: absolute;
+		/*content: '';
+		position: absolute;*/
 		left: -6px;
 		top: 50%;
 		margin-top: -6px;
