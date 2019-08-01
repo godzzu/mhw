@@ -60,6 +60,7 @@ overflow:auto;
 		-moz-box-shadow: 0 1px 1px #777, 0 1px 0 #666 inset;
 		-webkit-box-shadow: 0 1px 1px #777, 0 1px 0 #666 inset;
 		box-shadow: 0 1px 1px #777, 0 1px 0 #666 inset;
+		position:absolute;
 	}
 	
 	#menu:before,
