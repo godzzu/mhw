@@ -2,7 +2,7 @@
 
    /* スマホ用 */
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 480px){
 	*{
 		line-height:26px !important;
 	}
