@@ -51,7 +51,7 @@
 	.menubar{
 		width:180px;
 		height:950px;
-		display:inline-block;
+		display:none;
 	}
 	.content{
 		display:inline-block;
