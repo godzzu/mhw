@@ -81,14 +81,14 @@
 
 	/* 무기정보 */
 	#weapon_div{
-		width:300px; 
-		height:190px; 
+		width:400px; 
+		height:240px; 
 		margin-left:5px;
 	}
 
 	#weapons_video{
-		width:300px !important;
-		height:180px !important;
+		width:400px !important;
+		height:230px !important;
 	}
 
 }
