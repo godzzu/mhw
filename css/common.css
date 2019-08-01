@@ -84,7 +84,7 @@ overflow:auto;
 		-moz-box-shadow: 1px 0 0 #444;
 		-webkit-box-shadow: 1px 0 0 #444;
 		box-shadow: 1px 0 0 #444;
-		positon:absolute;
+		position:relative;
 	}
 	
 	#menu a {
@@ -110,7 +110,7 @@ overflow:auto;
 		_margin: 0; /*IE6 only*/
 		opacity: 0;
 		visibility: hidden;
-		position: absolute;
+		position: relative;
 		top: 0px;
 		left: 150px;
 		z-index: 1;    
