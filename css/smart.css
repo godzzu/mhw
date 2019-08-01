@@ -50,7 +50,7 @@
 		clear:both;
 		margin-left: 0px !important;
 		width:auto;
-		float:none;
+		float:left;
 	}
 	.content img{
 		width:300px !important;
