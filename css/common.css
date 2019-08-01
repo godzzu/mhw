@@ -169,7 +169,7 @@ flex-wrap:wrap;
 	
 	#menu ul a {    
 		padding: 10px;
-		width: 85%;
+		/*width: 85%;*/
 		_height: 10px; /*IE6 only*/
 		display: block;
 		white-space: nowrap;
