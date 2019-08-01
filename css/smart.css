@@ -42,15 +42,12 @@
 	#nav {
 		position: absolute;
 		left: 0px !important;
+		display:none;
 	}
 
 	#body{
 		clear:both;
 		margin-left: 0px !important;
-	}
-	.menubar{
-		width:120px !important;
-		display:inline-block;
 	}
 	.content{
 		display:inline-block;
