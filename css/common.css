@@ -60,7 +60,6 @@ overflow:auto;
 		-webkit-box-shadow: 0 1px 1px #777, 0 1px 0 #666 inset;
 		box-shadow: 0 1px 1px #777, 0 1px 0 #666 inset;
 		position:absolute;
-		display:inline-block;
 	}
 	
 	#menu:before,
