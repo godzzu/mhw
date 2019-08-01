@@ -37,7 +37,6 @@ flex-wrap:wrap;
 overflow:auto;
 }
 	#menu, #menu ul {
-		width:170px;
 		margin: 0;
 		padding: 0;
 		list-style: none;
