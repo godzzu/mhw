@@ -48,6 +48,11 @@
 		clear:both;
 		margin-left: 0px !important;
 	}
+	.menubar{
+		width:150px;
+		display:inline-block;
+		float:left;
+	}
 	.content{
 		display:inline-block;
 		vertical-align: top;
