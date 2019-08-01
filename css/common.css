@@ -26,6 +26,7 @@ text-decoration:none;
 .menubar{
 	width:20%;
 	height:95%;
+	display:inline-block;
 }
 
 ul{
@@ -223,6 +224,10 @@ overflow:auto;
 		border-radius: 0 0 3px 3px;
 	}
 
+.content{
+	display:inline-block;
+	vertical-align: top;
+}
 #body{
 padding: 2px;
 padding-top: 2px;
