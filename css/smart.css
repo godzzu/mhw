@@ -40,7 +40,7 @@
 	}
 
 	#nav {
-		width:20% !important;
+		width:18% !important;
 		height:950px;
 		display:inline-block;
 		float:left;
@@ -50,7 +50,7 @@
 		padding: 12px 30px;
 		color: #999;
 		text-transform: uppercase;
-		font: bold 8px Arial, Helvetica;
+		font: bold 10px Arial, Helvetica;
 		text-decoration: none;
 		text-shadow: 0 1px 0 #000;
 	}
