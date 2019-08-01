@@ -65,10 +65,10 @@
 		text-shadow: 0 1px 0 #000;
 	}
 	#body{
-		width:70% !important;
-		margin-left: 0px !important;
+		width:75% !important;
+		margin-left: 10px !important;
 		display:inline-block;
-		float:right;
+		float:left;
 	}
 	#header{
 		height:100px !important;
