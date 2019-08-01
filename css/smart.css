@@ -41,9 +41,10 @@
 
 	#nav {
 		width:15% !important;
+		height:950px;
 		display:inline-block;
 		float:left;
-		font-size: 10px;
+		font-size: 6px;
 	}
 
 	#body{
