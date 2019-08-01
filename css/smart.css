@@ -2,7 +2,7 @@
 
    /* スマホ用 */
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 600px){
 	*{
 		line-height:26px !important;
 	}
@@ -49,8 +49,7 @@
 		margin-left: 0px !important;
 	}
 	.menubar{
-		width:180px;
-		height:950px;
+		width:150px;
 		display:none;
 	}
 	.content{
@@ -89,14 +88,14 @@
 
 	/* 무기정보 */
 	#weapon_div{
-		width:500px; 
-		height:280px; 
+		width:300px; 
+		height:190px; 
 		margin-left:5px;
 	}
 
 	#weapons_video{
-		width:500px !important;
-		height:270px !important;
+		width:300px !important;
+		height:180px !important;
 	}
 
 }
