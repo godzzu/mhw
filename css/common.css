@@ -37,8 +37,7 @@ flex-wrap:wrap;
 overflow:auto;
 }
 	#menu, #menu ul {
-		width:200px;
-		height:950px;
+		width:170px;
 		margin: 0;
 		padding: 0;
 		list-style: none;
@@ -78,7 +77,7 @@ overflow:auto;
 	
 	#menu li {
 		width:170px;
-		height:30px;
+		height:40px;
 		float: left;
 		border-bottom: 1px solid #222;
 		-moz-box-shadow: 1px 0 0 #444;
@@ -105,13 +104,13 @@ overflow:auto;
 	}
 	
 	#menu ul {
-		margin: 20px 0 0 0;
+		margin: 0 20px 0 0;
 		_margin: 0; /*IE6 only*/
 		opacity: 0;
 		visibility: hidden;
 		position: absolute;
-		top: 38px;
-		left: 0;
+		top: 0px;
+		left: 130px;
 		z-index: 1;    
 		background: #444;
 		background: -moz-linear-gradient(#444, #111);
