@@ -38,6 +38,7 @@ overflow:auto;
 }
 	#menu, #menu ul {
 		width:200px;
+		height:950px;
 		margin: 0;
 		padding: 0;
 		list-style: none;
@@ -78,11 +79,10 @@ overflow:auto;
 	#menu li {
 		width:180px;
 		float: left;
-		border-right: 1px solid #222;
+		border-bottom: 1px solid #222;
 		-moz-box-shadow: 1px 0 0 #444;
 		-webkit-box-shadow: 1px 0 0 #444;
 		box-shadow: 1px 0 0 #444;
-		position: relative;
 	}
 	
 	#menu a {
