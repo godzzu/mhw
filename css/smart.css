@@ -40,7 +40,7 @@
 	}
 
 	#nav {
-		width:15% !important;
+		width:20% !important;
 		height:950px;
 		display:inline-block;
 		float:left;
@@ -52,10 +52,11 @@
 		text-shadow: 0 1px 0 #000;
 	}
 	#body{
-		width:80% !important;
+		width:75% !important;
 		clear:both;
 		margin-left: 0px !important;
 		display:inline-block;
+		float:left;
 	}
 	#header{
 		height:100px !important;
