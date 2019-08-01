@@ -44,6 +44,7 @@ overflow:auto;
 	
 	#menu {
 		margin: 10px;
+		width:180px;
 		height:750px;
 		border: 1px solid #222;
 		background-color: #111;
