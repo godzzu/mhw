@@ -59,7 +59,7 @@ overflow:auto;
 		-moz-box-shadow: 0 1px 1px #777, 0 1px 0 #666 inset;
 		-webkit-box-shadow: 0 1px 1px #777, 0 1px 0 #666 inset;
 		box-shadow: 0 1px 1px #777, 0 1px 0 #666 inset;
-		position:absolute;
+		position:relative;
 		display:block;
 	}
 	
@@ -111,7 +111,7 @@ overflow:auto;
 		_margin: 0; /*IE6 only*/
 		opacity: 0;
 		visibility: hidden;
-		position: relative;
+		position: absolute;
 		top: 0px;
 		left: 150px;
 		z-index: 1;    
