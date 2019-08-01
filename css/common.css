@@ -23,6 +23,11 @@ color:black;
 text-decoration:none;
 }
 
+.menubar{
+	width:20%;
+	height:95%;
+}
+
 ul{
 display:flex;
 align-content:flex-start;
@@ -37,8 +42,7 @@ overflow:auto;
 	}
 	
 	#menu {
-		width: 20%;
-		height:95%;
+		width: 18%;
 		margin: 10px auto;
 		border: 1px solid #222;
 		background-color: #111;
