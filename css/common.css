@@ -34,7 +34,6 @@ display:flex;
 align-content:flex-start;
 flex-direction:column;
 flex-wrap:wrap;
-overflow:auto;
 }
 	#menu, #menu ul {
 		margin: 0;
