@@ -44,7 +44,7 @@ flex-wrap:wrap;
 	
 	#menu {
 		margin: 10px;
-		width:170px;
+		width:15%;
 		border: 1px solid #222;
 		background-color: #111;
 		background-image: -moz-linear-gradient(#444, #111); 
@@ -78,7 +78,7 @@ flex-wrap:wrap;
 	}
 	
 	#menu li {
-		width:170px;
+		width:17%;
 		height:40px;
 		float:top;
 		border-bottom: 1px solid #222;
@@ -107,13 +107,13 @@ flex-wrap:wrap;
 	}
 	
 	#menu ul {
-		margin: 0 170px 0 0;
+		margin: 0 17% 0 0;
 		_margin: 0; /*IE6 only*/
 		opacity: 0;
 		visibility: hidden;
 		position: absolute;
 		top: 0px;
-		left: 170px;
+		left: 17%;
 		z-index: 1;    
 		background: #444;
 		background: -moz-linear-gradient(#444, #111);
@@ -143,7 +143,7 @@ flex-wrap:wrap;
 	
 	#menu ul ul {
 		top: 0;
-		left: 170px;
+		left: 17%;
 		margin: 0 0 0 20px;
 		_margin: 0; /*IE6 only*/
 		-moz-box-shadow: -1px 0 0 rgba(255,255,255,.3);
@@ -169,7 +169,7 @@ flex-wrap:wrap;
 	
 	#menu ul a {    
 		padding: 10px;
-		width: 150px;
+		width: 15%;
 		_height: 10px; /*IE6 only*/
 		display: block;
 		white-space: nowrap;
