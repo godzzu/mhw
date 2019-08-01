@@ -46,6 +46,9 @@
 		float:left;
 	}
 	#menu a {
+		float: left;
+		padding: 12px 30px;
+		color: #999;
 		text-transform: uppercase;
 		font: bold 8px Arial, Helvetica;
 		text-decoration: none;
@@ -53,7 +56,6 @@
 	}
 	#body{
 		width:75% !important;
-		clear:both;
 		margin-left: 0px !important;
 		display:inline-block;
 		float:left;
