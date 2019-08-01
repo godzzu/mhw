@@ -44,9 +44,10 @@
 		height:950px;
 		display:inline-block;
 		float:left;
+		font: 9px;
 	}
 	#menu a {
-		font: bold 8px Arial, Helvetica;
+		font: bold 9px;
 	}
 	#body{
 		width:80% !important;
