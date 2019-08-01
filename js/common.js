@@ -17,3 +17,8 @@
 		$("#body").children().remove();
 		$("#body").load('../weapon/'+path+'.html');
 	}
+
+	function skill_info(path){
+		$("#body").children().remove();
+		$("#body").load('../skill/'+path+'.html');
+	}
