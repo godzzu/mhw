@@ -2,7 +2,7 @@
 
    /* スマホ用 */
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 750px){
 	*{
 		line-height:26px !important;
 	}
@@ -50,8 +50,7 @@
 	}
 	.menubar{
 		width:150px;
-		display:inline-block;
-		float:left;
+		display:none;
 	}
 	.content{
 		display:inline-block;
