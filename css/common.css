@@ -195,8 +195,11 @@ flex-wrap:wrap;
 	#menu ul li:first-child > a:after {
 		content: '';
 		position: absolute;
-		left: 40px;
-		top: -6px;
+		left: -6px;
+		top: 50%;
+		margin-top: -6px;
+		/*left: 40px;
+		top: -6px;*/
 		/*border-left: 6px solid transparent;
 		border-right: 6px solid transparent;
 		border-bottom: 6px solid #444;*/
