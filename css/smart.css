@@ -40,7 +40,10 @@
 	}
 
 	#nav {
-		display:none;
+		width:10%;
+		height:95%;
+		display:inline-block;
+		float:left;
 	}
 
 	#body{
