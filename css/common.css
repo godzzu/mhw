@@ -220,7 +220,8 @@ flex-wrap:wrap;
 	}
 	
 	#menu ul li:first-child a:hover:after {
-		border-bottom-color: #04acec; 
+		border-right-color: #04acec; 
+		border-bottom-color: transparent;
 	}
 	
 	#menu ul ul li:first-child a:hover:after {
