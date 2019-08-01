@@ -107,13 +107,13 @@ flex-wrap:wrap;
 	}
 	
 	#menu ul {
-		margin: 0 175px 0 0;
+		margin: 0 16% 0 0;
 		_margin: 0; /*IE6 only*/
 		opacity: 0;
 		visibility: hidden;
 		position: absolute;
 		top: 0px;
-		left: 175px;
+		left: 16%;
 		z-index: 1;    
 		background: #444;
 		background: -moz-linear-gradient(#444, #111);
