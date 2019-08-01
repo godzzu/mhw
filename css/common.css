@@ -81,7 +81,7 @@ overflow:auto;
 	#menu li {
 		width:170px;
 		height:40px;
-		float: left top;
+		float:top;
 		border-bottom: 1px solid #222;
 		-moz-box-shadow: 1px 0 0 #444;
 		-webkit-box-shadow: 1px 0 0 #444;
