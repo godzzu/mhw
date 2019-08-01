@@ -8,7 +8,7 @@
 	}
 
 	img{
-		max-width: 100% !important;
+		max-width: 80% !important;
 		height: auto !important;
 	}
 
@@ -47,14 +47,11 @@
 	}
 
 	#body{
+		width:80%;
 		clear:both;
 		margin-left: 0px !important;
 		width:auto;
 		display:inline-block;
-	}
-	.content img{
-		width:300px !important;
-		height:180px !important;
 	}
 	#header{
 		height:100px !important;
