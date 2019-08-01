@@ -84,6 +84,7 @@ overflow:auto;
 		-moz-box-shadow: 1px 0 0 #444;
 		-webkit-box-shadow: 1px 0 0 #444;
 		box-shadow: 1px 0 0 #444;
+		position:relative;
 	}
 	
 	#menu a {
