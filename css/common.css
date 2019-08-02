@@ -411,6 +411,10 @@ table .bowgun_distance{
 	height:30px;
 }
 
+table .skill_level_td{
+	width:20px;
+}
+
 
 /* 무기정보 */
 #weapon_div{
