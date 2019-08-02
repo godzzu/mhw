@@ -19,19 +19,6 @@ this.tablecloth = function(){
 	// if set to true then click on a table sell will select row or column based on config
 	var selectable = true;
 	
-	// this function is called when 
-	// add your own code if you want to add action 
-	// function receives object that has been clicked 
-	this.clickAction = function(obj){
-		if(obj.id =="userTel"){
-			speedDial(obj.innerHTML); // 스피드 다이얼 호출
-		}else if(obj.id =="userName2"){
-			agentSearch_sort(1);
-		}else if(obj.id =="userCode2"){
-			agentSearch_sort(2);
-		}else if(obj.id =="userStat2"){
-			agentSearch_sort(3);
-		}
 	};
 
 
