@@ -22,3 +22,8 @@
 		$(".content").children().remove();
 		$(".content").load('../jewel/'+path+'.html');
 	}
+
+	function charm_info(path){
+		$(".content").children().remove();
+		$(".content").load('../charm/'+path+'.html');
+	}
