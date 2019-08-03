@@ -18,7 +18,7 @@
 		$(".content").load('../weapon/'+path+'.html');
 	}
 
-	function skill_info(path){
+	function jewel_info(path){
 		$(".content").children().remove();
-		$(".content").load('../skill/'+path+'.html');
+		$(".content").load('../jewel/'+path+'.html');
 	}
