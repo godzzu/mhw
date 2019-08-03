@@ -96,6 +96,10 @@
 		width:25px !important;
 		height:25px !important;
 	}
+	table .skill_thumb{
+	width: 30px !important;
+	height: 30px !important;
+}
 
 	/* 무기정보 */
 	#weapon_div{

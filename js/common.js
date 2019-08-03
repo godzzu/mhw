@@ -23,7 +23,7 @@
 		$(".content").load('../jewel/'+path+'.html');
 	}
 
-	function charm_info(path){
+	function skill_info(path){
 		$(".content").children().remove();
-		$(".content").load('../charm/'+path+'.html');
+		$(".content").load('../skill/'+path+'.html');
 	}
