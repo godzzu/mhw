@@ -412,6 +412,10 @@ table .bowgun_distance{
 	height:30px;
 }
 
+/*스킬*/
+table td.fixed_width{
+	width: 14%;
+}
 table .skill_level_td{
 	width:20px;
 }
