@@ -27,3 +27,8 @@
 		$(".content").children().remove();
 		$(".content").load('../skill/'+path+'.html');
 	}
+
+	function subequip_info(path){
+		$(".content").children().remove();
+		$(".content").load('../sub_equip/'+path+'.html');
+	}
