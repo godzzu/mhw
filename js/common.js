@@ -32,3 +32,8 @@
 		$(".content").children().remove();
 		$(".content").load('../sub_equip/'+path+'.html');
 	}
+
+	function quest_info(path){
+		$(".content").children().remove();
+		$(".content").load('../quest/'+path+'.html');
+	}
