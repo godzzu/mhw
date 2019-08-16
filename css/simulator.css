@@ -11,56 +11,6 @@ h1,h2,h3,h4{
 font-size: 1.2em;
 }
 
-body{
-
-}
-
-#header{
-height:65px;
-border-bottom:solid 1px #ccc;
-background-color:rgb(50, 50, 50);
-color:white;
-}
-
-#header a{
-text-decoration:none;
-}
-
-#nav{
-float:left;
-width:200px;
-border-right:solid 1px;
-background-color:rgb(225, 225, 225);
-}
-/*
-#nav2{
-float:right;
-width:200px;
-background-color:rgb(225, 225, 225);
-border-left:solid 1px;
-}
-*/
-#body{
-margin-left: 200px;
-border-left: solid 1px;
-padding: 2px;
-padding-top: 2px;
-margin-right:5px;
-
-}
-
-#footer{
-border-top:solid 1px;
-clear:both;
-background-color:rgb(205, 205, 205);
-}
-
-#container{
-/*min-width:1000px;*/
-/*margin-left:auto;
-margin-right:auto;*/
-}
-
 .AA{
 font-family:"ＭＳ Ｐゴシック","MS PGothic","Mona","mona-gothic-jisx0208.1990-0",sans-serif;
 font-size: 16px !important;
@@ -92,12 +42,6 @@ line-height: 24px;
 margin-top:5px;
 margin-bottom:5px;
 }
-
-.nav_div{
-background-color:rgb(60, 60, 60);
-color:#f3f3f3;
-}
-
 
 /*テーブルとリストタグ*/
 table{
