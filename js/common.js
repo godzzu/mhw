@@ -37,3 +37,8 @@
 		$(".content").children().remove();
 		$(".content").load('../quest/'+path+'.html');
 	}
+
+	function simulator(path){
+		$(".content").children().remove();
+		$(".content").load('../simulator/'+path+'.html');
+	}
