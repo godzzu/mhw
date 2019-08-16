@@ -1357,23 +1357,6 @@ if(nik.niku_number == select_name_mon_val){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //モンスターが選択された時
 $('#mon').change(function(){var monster_status14 = {
 140000: {quest :"ベータ版", hp :"2990", hph :"1", def :"1", hosoku :"縄張り争いのダメージ598と基準体力から推測"},

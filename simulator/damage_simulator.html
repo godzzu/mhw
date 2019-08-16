@@ -1739,11 +1739,14 @@ $('select[name="msz"]').val("");
 <option value="0">대상선택
 <option value="14">안쟈나프</option><option value="13">이블조</option><option value="46">발하자크</option><option value="9">볼가노스</option><option value="12">우라간킨</option><option value="60">고대레셴</option><option value="27">오도가론</option><option value="45">키린</option><option value="19">크샬다오라</option><option value="6">쿠루루야크</option><option value="10">쥬라토도스</option><option value="48">제노・지바</option><option value="22">조라・마그다라오스</option><option value="7">치치야크</option><option value="3">디아블로스</option><option value="50">디아블로스아종</option><option value="20">테오・테스카토르</option><option value="26">도스기르오스</option><option value="17">도스쟈그라스</option><option value="28">도도가마루</option><option value="18">토비카가치</option><option value="57">나나・테스카토리</option><option value="21">네르기간테</option><option value="4">파오우르무</option><option value="47">바젤기우스</option><option value="8">푸케푸케</option><option value="58">베히모스</option><option value="11">볼보로스</option><option value="56">맘타로트</option><option value="15">라도발킨</option><option value="2">리오레이아</option><option value="51">리오레이아아종</option><option value="1">리오레우스</option><option value="52">리오레우스아종</option><option value="5">레이기에나</option><option value="59">레셴</option><option value="30">아프케로스</option><option value="29">아프토노스</option><option value="53">가쟈부</option><option value="54">가스토돈</option><option value="23">가쟈우</option><option value="37">칸타로스</option><option value="25">기르오스</option><option value="32">케스토돈♂</option><option value="33">케스토돈♀</option><option value="31">켈비</option><option value="16">쟈그라스</option><option value="24">샤무오스</option><option value="39">노이오스</option><option value="55">바르노스</option><option value="38">메르노스</option><option value="49">모스</option><option value="40">라피노스</option><option value="36">랑고스타</option><option value="41">작은나무통</option><option value="42">큰나무통</option><option value="43">검은나무통</option><option value="44">기둥</option>
 </select>
-전체방어율：<input type="hidden" name="def" value="1.00" size="8">
+<!-- 전체방어율： -->
+<input type="hidden" name="def" value="1.00" size="8">
 
-절뚝거림보정：<input type="hidden" name="yr" value="1.00" size="8">
+<!-- 절뚝거림보정： -->
+<input type="hidden" name="yr" value="1.00" size="8">
 
-상태보정：<input type="hidden" name="zh" value="1.00" size="8">
+<!-- 상태보정： -->
+<input type="hidden" name="zh" value="1.00" size="8">
 
 <br />
 
@@ -2693,12 +2696,12 @@ input type="text" name="msj" value="$ | _GET[msj]" size="2"
 </form>
 
 
-<pre>
+<!-- <pre> -->
 
 <!-- <span style="color:red;">データ入力中です。</span> -->
 
 
--------공격력계산식-------
+<!-- -------공격력계산식-------
 (((武器배率＋鈍器使い+カスタム강화)ｘ乗算補正ｘ탄강화ｘ竜の一矢특수사격강화ｘネコの射撃術ｘネコの暴れ撃ちｘ飛燕スキルｘ狩猟笛の自分강화以外の공격旋律)＋鈍器使い以外の加算補正)
 ここまでで(武器배率+カスタム강화)ｘ3より多くならない
 この後に
@@ -2750,9 +2753,9 @@ input type="text" name="msj" value="$ | _GET[msj]" size="2"
 物理+属性で表示されるダメージはそれぞれ単体で同じ式で計算
 
 　관통탄+근거리사격 강화파츠
-心眼／탄道강화スキルがないと距離補正1.0で근거리사격 강화파츠の効果は得られないうえに、その距離は短いことに注意してください。
+心眼／탄道강화スキルがないと距離補正1.0で근거리사격 강화파츠の効果は得られないうえに、その距離は短いことに注意してください。 -->
 
--------仕様-------
+<!-- -------仕様-------
 
 不具合はたくさん修正しましたがまだあるかもしれません。
 
@@ -2766,7 +2769,9 @@ input type="text" name="msj" value="$ | _GET[msj]" size="2"
 灰+◆→G級だと탄かれる
 
 ・독と爆破の処理
-ダメージ / 耐性 * (武器の属性値<!-- / 10-->)
+ダメージ / 耐性 * (武器の属性値 -->
+<!-- / 10-->
+<!-- )
 で期待値を表示して加算
 近接武器と弓の爆破属性（爆破ビン装填時ではない場合）はここから3で割る
 なので0.33という本来より少ない数値が出ます
@@ -2777,8 +2782,10 @@ input type="text" name="msj" value="$ | _GET[msj]" size="2"
 斬れ味データがあれば設定されたものを適用します
 ない場合は斬れ味補正がかかりません
 詳細な斬れ味データ（白30など）があれば実際に斬れ味の減少を適用して計算します
-業物スキル<!--及びG級での탄かれ判定-->も適用されます
-鈍器使い発動中に斬れ味が落ちた場合でもその斬れ味に対応した공격력で計算されます
+業物スキル -->
+<!--及びG級での탄かれ判定-->
+<!-- も適用されます -->
+<!-- 鈍器使い発動中に斬れ味が落ちた場合でもその斬れ味に対応した공격력で計算されます
 
 ・数回공격と状態異常
 近接武器は3回공격した時、ボウガンと弓の属性ビン装填時は1回공격した時に
@@ -2805,9 +2812,9 @@ input type="text" name="msj" value="$ | _GET[msj]" size="2"
 
 ・選択공격
 モーションを選択した場合、そのモーションで計算します
-数回공격も可能です
+数回공격も可能です -->
 
-・ランキング
+<!-- ・ランキング
 <span style="font-weight:bold;">武器種が選択</span>されていて<span style="font-weight:bold;">モードをランキング</span>にして
 <span style="font-weight:bold;">モーション選択と肉質選択</span>がされている場合、
 ダメージランキングを表示します。
@@ -2839,4 +2846,4 @@ MH4Gのギルクエにあった状態異常からモンスターが回復した�
 ・ボウガンとソートの無属性
 ボウガンで属性項目の無属性で選択してソートすると화염탄、수냉탄、전격탄、빙결탄、멸룡탄が装填できないボウガンのみ表示されます
 特定の탄を装填できるボウガンを武器一覧に表示したい場合は武器の右にある탄から選択してください
-</pre>
+</pre> -->
