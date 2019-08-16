@@ -1,5 +1,9 @@
 
 <link rel="stylesheet" type="text/css" href="../css/simulator.css">
+<script src="../js/jquery.cookie.js" type="text/javascript"></script>
+<script src="../js/jquery_dame_cookie.js" type="text/javascript"></script>
+<script src="../js/bukiconf.js" type="text/javascript"></script>
+<script src="../js/sentaku.js" type="text/javascript"></script>
 <style type="text/css">
 body{
 /*overflow: auto;*/
@@ -99,7 +103,7 @@ var select_name_da = $('select[name="da"]').val();//탄1
 var select_name_da2 = $('select[name="da2"]').val();//탄2
 var select_name_ya = $('select[name="ya"]').val();//탄
 var select_name_t = $('select[name="t"]').val();//武器種
-var select_name_sp = $('select[name="sp"]').val();//特殊
+var select_name_sp = $('select[name="sp"]').val();//특수
 var select_name_f = $('select[name="f"]').val();//最終강화判定
 
 //現在選択されているvalueを取得
@@ -415,7 +419,7 @@ var arkey = null;
 
 
 	$("select#buki option").remove();//武器変更を繰り返すと増えていくので一旦武器を全て消去
-	select_name_buki.append('<option value="">武器');//これはeach前に置く
+	select_name_buki.append('<option value="">무기');//これはeach前に置く
 var sta = null;
 
 $.each(weapons,
@@ -554,23 +558,23 @@ if(elem.kouka == 0) return true;
 
 
 //弓の矢種の表示
-if(select_name_ya == "r1" && select_name_t == "14"){//溜め1が連射のものだけを表示する
-if(elem.tame1.indexOf("連射"))  return true;
+if(select_name_ya == "r1" && select_name_t == "14"){//溜め1が연사のものだけを表示する
+if(elem.tame1.indexOf("연사"))  return true;
 
 }
 
-if(select_name_ya == "r2" && select_name_t == "14"){//溜め2が連射のものだけを表示する
-if(elem.tame2.indexOf("連射"))  return true;
+if(select_name_ya == "r2" && select_name_t == "14"){//溜め2が연사のものだけを表示する
+if(elem.tame2.indexOf("연사"))  return true;
 
 }
 
-if(select_name_ya == "r3" && select_name_t == "14"){//溜め3が連射のものだけを表示する
-if(elem.tame3.indexOf("連射"))  return true;
+if(select_name_ya == "r3" && select_name_t == "14"){//溜め3が연사のものだけを表示する
+if(elem.tame3.indexOf("연사"))  return true;
 
 }
 
-if(select_name_ya == "r4" && select_name_t == "14"){//溜め4が連射のものだけを表示する
-if(elem.tame4.indexOf("連射"))  return true;
+if(select_name_ya == "r4" && select_name_t == "14"){//溜め4が연사のものだけを表示する
+if(elem.tame4.indexOf("연사"))  return true;
 
 }
 
@@ -614,23 +618,23 @@ if(elem.tame4.indexOf("확산")) return true;
 
 }
 
-if(select_name_ya == "z1" && select_name_t == "14"){//溜め1が重射のものだけを表示する
-if(elem.tame1.indexOf("重射"))  return true;
+if(select_name_ya == "z1" && select_name_t == "14"){//溜め1が중복사격のものだけを表示する
+if(elem.tame1.indexOf("중복사격"))  return true;
 
 }
 
-if(select_name_ya == "z2" && select_name_t == "14"){//溜め2が重射のものだけを表示する
-if(elem.tame2.indexOf("重射"))  return true;
+if(select_name_ya == "z2" && select_name_t == "14"){//溜め2が중복사격のものだけを表示する
+if(elem.tame2.indexOf("중복사격"))  return true;
 
 }
 
-if(select_name_ya == "z3" && select_name_t == "14"){//溜め3が重射のものだけを表示する
-if(elem.tame3.indexOf("重射"))  return true;
+if(select_name_ya == "z3" && select_name_t == "14"){//溜め3が중복사격のものだけを表示する
+if(elem.tame3.indexOf("중복사격"))  return true;
 
 }
 
-if(select_name_ya == "z4" && select_name_t == "14"){//溜め4が重射のものだけを表示する
-if(elem.tame4.indexOf("重射")) return true;
+if(select_name_ya == "z4" && select_name_t == "14"){//溜め4が중복사격のものだけを表示する
+if(elem.tame4.indexOf("중복사격")) return true;
 
 }
 //弓の矢種の表示～ここまで
@@ -747,10 +751,10 @@ sta = elem[arkey];
 
 
 
-//特殊の表示/非表示
+//특수の表示/非表示
 	$("select#sp option").remove();//武器変更を繰り返すと増えていくので一旦武器を全て消去
 
-	$("select#sp").append('<option value="0">' + "特殊");
+	$("select#sp").append('<option value="0">' + "특수");
 
 $.each(sp,
 	function(index, elem){
@@ -861,13 +865,13 @@ enzan();
 //矢種が選択された時～ここまで
 
 
-//特殊が選択された時
+//특수が選択された時
 $("select#sp").change(function(){
 
 enzan();
 
 });
-//特殊が選択された時～ここまで
+//특수が選択された時～ここまで
 
 
 //最終강화関連が選択された時
@@ -962,7 +966,7 @@ $('select[name="z"]').val(0);
 	}
 
 
-//ソート（特殊）
+//ソート（특수）
 var spSelect =  $('select[name="sp"] option[selected]').val();
 	if(spSelect !== undefined){
 $('select[name="sp"] option:selected').removeAttr('selected');
@@ -1970,7 +1974,7 @@ $('select[name="msz"]').val("");
 -->
 <!--
 <option value="10" >鬼人탄|공격+10?
-<option value="11" >鬼人회심탄|공격+15회심+10+鬼人탄の特殊効果
+<option value="11" >鬼人회심탄|공격+15회심+10+鬼人탄の특수効果
 <option value="">広域化1種
 <option value="">広域化2種
 -->
@@ -2350,9 +2354,9 @@ $('select[name="msz"]').val("");
 </select>
 
 
-<label><input type="checkbox" name="zyon" value="ON" >ネコの特殊공격術</label>
+<label><input type="checkbox" name="zyon" value="ON" >ネコの특수공격術</label>
 
-<label><input type="checkbox" name="kait" value="ON" >特殊회심</label>
+<label><input type="checkbox" name="kait" value="ON" >특수회심</label>
 
 <label><input type="checkbox" name="kyk" value="ON" >ネコの불薬術</label>
 

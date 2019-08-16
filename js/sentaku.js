@@ -2143,7 +2143,7 @@ if(mon_value == 206){ var array_mon = monster_status206;}
 if(mon_value == 207){ var array_mon = monster_status207;}
 //モンスターのステータスを削除
 $('select#ams option').remove();
-$('#ams').append('<option value="">モンスターのステータス');
+$('#ams').append('<option value="">몬스터 스테이터스');
 //モンスターのステータスを追加
 $.each(array_mon, function(i, value) {
 
@@ -2152,7 +2152,7 @@ if(value["def"] == 1){
 }
 
 //$('#ams').append('<option value="' + value[i] + '">体力' + value["hp"] + "　体力補正" + value["hph"] + "　全体防御率" + value["def"] + "　" + value["quest"] + "　" + value["hosoku"]);
-$('#ams').append('<option value="' + i + '">体力' + value["hp"] + "　体力補正" + value["hph"] + "　全体防御率" + value["def"] + "　" + value["quest"]);
+$('#ams').append('<option value="' + i + '">체력' + value["hp"] + "　체력보정" + value["hph"] + "　전체방어율" + value["def"] + "　" + value["quest"]);
 });
 
 
