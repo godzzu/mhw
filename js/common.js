@@ -38,6 +38,11 @@
 		$(".content").load('../quest/'+path+'.html');
 	}
 
+	function tip_info(path){
+		$(".content").children().remove();
+		$(".content").load('../tip/'+path+'.html');
+	}
+
 	function simulator(path){
 		$(".content").children().remove();
 		$(".content").load('../simulator/'+path+'.html');
