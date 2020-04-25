@@ -1,28 +1,4 @@
-Skip to content
-Why GitHub? 
-Team
-Enterprise
-Explore 
-Marketplace
-Pricing 
-Search
 
-Sign in
-Sign up
-zarocknz
-/
-javascript-winwheel
-11272189
- Code Issues 18 Pull requests 5 Actions Projects 0 Security 0 Insights
-Join GitHub today
-GitHub is home to over 40 million developers working together to host and review code, manage projects, and build software together.
-
-javascript-winwheel/Winwheel.js /
-@zarocknz zarocknz Responsive margin
-cfd17bc on 2 Jan 2019
-@zarocknz@LorisZ
-2340 lines (1962 sloc)  124 KB
-  
 /*
     Winwheel.js, by Douglas McKechie @ www.dougtesting.net
     See website for tutorials and other documentation.
@@ -86,7 +62,7 @@ function Winwheel(options, drawWheel)
     // -----------------------------------------
     // Loop through the default options and create properties of this class set to the value for the option passed in
     // or if not value for the option was passed in then to the default.
-    for (let key in defaultOptions) {
+    for (var key in defaultOptions) {
         if ((options != null) && (typeof(options[key]) !== 'undefined')) {
             this[key] = options[key];
         } else {
@@ -96,7 +72,7 @@ function Winwheel(options, drawWheel)
 
     // Also loop though the passed in options and add anything specified not part of the class in to it as a property.
     if (options != null) {
-        for (let key in options) {
+        for (var key in options) {
             if (typeof(this[key]) === 'undefined') {
                 this[key] = options[key];
             }
@@ -146,7 +122,7 @@ function Winwheel(options, drawWheel)
     // Add array of segments to the wheel, then populate with segments if number of segments is specified for this object.
     this.segments = new Array(null);
 
-    for (let x = 1; x <= this.numSegments; x++) {
+    for (var x = 1; x <= this.numSegments; x++) {
         // If options for the segments have been specified then create a segment sending these options so
         // the specified values are used instead of the defaults.
         if ((options != null) && (options['segments']) && (typeof(options['segments'][x-1]) !== 'undefined')) {
@@ -251,7 +227,7 @@ function Winwheel(options, drawWheel)
         winwheelToDrawDuringAnimation = this;
         winhweelAlreadyDrawn = false;
 
-        for (let y = 1; y <= this.numSegments; y ++) {
+        for (var y = 1; y <= this.numSegments; y ++) {
             if (this.segments[y].image !== null) {
                 this.segments[y].imgData = new Image();
                 this.segments[y].imgData.onload = winwheelLoadedImage;
@@ -270,21 +246,21 @@ Winwheel.prototype.updateSegmentSizes = function()
     // If this object actually contains some segments
     if (this.segments) {
         // First add up the arc used for the segments where the size has been set.
-        let arcUsed = 0;
-        let numSet  = 0;
+        var arcUsed = 0;
+        var numSet  = 0;
 
         // Remember, to make it easy to access segments, the position of the segments in the array starts from 1 (not 0).
-        for (let x = 1; x <= this.numSegments; x ++) {
+        for (var x = 1; x <= this.numSegments; x ++) {
             if (this.segments[x].size !== null) {
                 arcUsed += this.segments[x].size;
                 numSet ++;
             }
         }
 
-        let arcLeft = (360 - arcUsed);
+        var arcLeft = (360 - arcUsed);
 
         // Create variable to hold how much each segment with non-set size will get in terms of degrees.
-        let degreesEach = 0;
+        var degreesEach = 0;
 
         if (arcLeft > 0) {
             degreesEach = (arcLeft / (this.numSegments - numSet));
@@ -292,9 +268,9 @@ Winwheel.prototype.updateSegmentSizes = function()
 
         // ------------------------------------------
         // Now loop though and set the start and end angle of each segment.
-        let currentDegree = 0;
+        var currentDegree = 0;
 
-        for (let x = 1; x <= this.numSegments; x ++) {
+        for (var x = 1; x <= this.numSegments; x ++) {
             // Set start angle.
             this.segments[x].startAngle = currentDegree;
 
@@ -400,13 +376,13 @@ Winwheel.prototype.drawPins = function()
 {
     if ((this.pins) && (this.pins.number)) {
         // Get scaled centerX and centerY to use in the code below so pins will draw responsively too.
-        let centerX = (this.centerX * this.scaleFactor);
-        let centerY = (this.centerY * this.scaleFactor);
-        let outerRadius = (this.outerRadius * this.scaleFactor);
+        var centerX = (this.centerX * this.scaleFactor);
+        var centerY = (this.centerY * this.scaleFactor);
+        var outerRadius = (this.outerRadius * this.scaleFactor);
 
         // Check if the pin's size is to be responsive too, if so set the pinOuterRadius to a scaled version number.
-        let pinOuterRadius = this.pins.outerRadius;
-        let pinMargin = this.pins.margin;
+        var pinOuterRadius = this.pins.outerRadius;
+        var pinMargin = this.pins.margin;
 
         if (this.pins.responsive) {
             pinOuterRadius = (this.pins.outerRadius * this.scaleFactor);
@@ -417,9 +393,9 @@ Winwheel.prototype.drawPins = function()
         //++ There is a slight oddity with the pins in that there is a pin at 0 and also one at 360 and these will be drawn
         //++ directly over the top of each other. Also pins are 0 indexed which could possibly cause some confusion
         //++ with the getCurrentPin function - for now this is just used for audio so probably not a problem.
-        let pinSpacing = (360 / this.pins.number);
+        var pinSpacing = (360 / this.pins.number);
 
-        for(let i=1; i<=this.pins.number; i ++) {
+        for(var i=1; i<=this.pins.number; i ++) {
             this.ctx.save();
 
             // Set the stroke style and line width.
@@ -462,9 +438,9 @@ Winwheel.prototype.drawPointerGuide = function()
     // If have canvas context.
     if (this.ctx) {
         // Get scaled center x an y and also the outer radius.
-        let centerX = (this.centerX * this.scaleFactor);
-        let centerY = (this.centerY * this.scaleFactor);
-        let outerRadius = (this.outerRadius * this.scaleFactor);
+        var centerX = (this.centerX * this.scaleFactor);
+        var centerY = (this.centerY * this.scaleFactor);
+        var outerRadius = (this.outerRadius * this.scaleFactor);
 
         this.ctx.save();
 
@@ -497,17 +473,17 @@ Winwheel.prototype.drawWheelImage = function()
     // to draw() should be done from a wheelImage.onload callback as detailed in example documentation.
     if (this.wheelImage != null) {
         // Get the centerX and centerY in to variables, adjust by the scaleFactor.
-        let centerX = (this.centerX * this.scaleFactor);
-        let centerY = (this.centerY * this.scaleFactor);
+        var centerX = (this.centerX * this.scaleFactor);
+        var centerY = (this.centerY * this.scaleFactor);
 
         // Get the scaled width and height of the image.
-        let scaledWidth = (this.wheelImage.width * this.scaleFactor);
-        let scaledHeight = (this.wheelImage.height * this.scaleFactor);
+        var scaledWidth = (this.wheelImage.width * this.scaleFactor);
+        var scaledHeight = (this.wheelImage.height * this.scaleFactor);
 
         // Work out the correct X and Y to draw the image at. We need to get the center point of the image
         // aligned over the center point of the wheel, we can't just place it at 0, 0.
-        let imageLeft = (centerX - (scaledWidth / 2));
-        let imageTop  = (centerY - (scaledHeight / 2));
+        var imageLeft = (centerX - (scaledWidth / 2));
+        var imageTop  = (centerY - (scaledHeight / 2));
 
         // Rotate and then draw the wheel.
         // We must rotate by the rotationAngle before drawing to ensure that image wheels will spin.
@@ -531,16 +507,16 @@ Winwheel.prototype.drawSegmentImages = function()
     // Again check have context in case this function was called directly and not via draw function.
     if (this.ctx) {
         // Get the centerX and centerY of the wheel adjusted with the scale factor.
-        let centerX = (this.centerX * this.scaleFactor);
-        let centerY = (this.centerY * this.scaleFactor);
+        var centerX = (this.centerX * this.scaleFactor);
+        var centerY = (this.centerY * this.scaleFactor);
 
         // Draw the segments if there is at least one in the segments array.
         if (this.segments) {
             // Loop though and output all segments - position 0 of the array is not used, so start loop from index 1
             // this is to avoid confusion when talking about the first segment.
-            for (let x = 1; x <= this.numSegments; x ++) {
+            for (var x = 1; x <= this.numSegments; x ++) {
                 // Get the segment object as we need it to read options from.
-                let seg = this.segments[x];
+                var seg = this.segments[x];
 
                 // Check image has loaded so a property such as height has a value.
                 if (seg.imgData.height) {
@@ -550,14 +526,14 @@ Winwheel.prototype.drawSegmentImages = function()
                     // South: Outside at bottom, inside at top. Sits evenly over the 180 degrees angle.
                     // East: Outside at right, inside at left. Sits evenly over the 90 degrees angle.
                     // West: Outside at left, inside at right. Sits evenly over the 270 degrees angle.
-                    let imageLeft = 0;
-                    let imageTop = 0;
-                    let imageAngle = 0;
-                    let imageDirection = '';
+                    var imageLeft = 0;
+                    var imageTop = 0;
+                    var imageAngle = 0;
+                    var imageDirection = '';
 
                     // Get scaled width and height of the segment image.
-                    let scaledWidth = (seg.imgData.width * this.scaleFactor);
-                    let scaledHeight = (seg.imgData.height * this.scaleFactor);
+                    var scaledWidth = (seg.imgData.width * this.scaleFactor);
+                    var scaledHeight = (seg.imgData.height * this.scaleFactor);
 
                     if (seg.imageDirection !== null) {
                         imageDirection = seg.imageDirection;
@@ -639,20 +615,20 @@ Winwheel.prototype.drawSegments = function()
         // Draw the segments if there is at least one in the segments array.
         if (this.segments) {
             // Get scaled centerX and centerY and also scaled inner and outer radius.
-            let centerX = (this.centerX * this.scaleFactor);
-            let centerY = (this.centerY * this.scaleFactor);
-            let innerRadius = (this.innerRadius * this.scaleFactor);
-            let outerRadius = (this.outerRadius * this.scaleFactor);
+            var centerX = (this.centerX * this.scaleFactor);
+            var centerY = (this.centerY * this.scaleFactor);
+            var innerRadius = (this.innerRadius * this.scaleFactor);
+            var outerRadius = (this.outerRadius * this.scaleFactor);
 
             // Loop though and output all segments - position 0 of the array is not used, so start loop from index 1
             // this is to avoid confusion when talking about the first segment.
-            for (let x = 1; x <= this.numSegments; x ++) {
+            for (var x = 1; x <= this.numSegments; x ++) {
                 // Get the segment object as we need it to read options from.
-                let seg = this.segments[x];
+                var seg = this.segments[x];
 
-                let fillStyle;
-                let lineWidth;
-                let strokeStyle;
+                var fillStyle;
+                var lineWidth;
+                var strokeStyle;
 
                 // Set the variables that defined in the segment, or use the default options.
                 if (seg.fillStyle !== null) {
@@ -692,8 +668,8 @@ Winwheel.prototype.drawSegments = function()
                     } else {
                         // Work out the x and y values for the starting point of the segment which is at its starting angle
                         // but out from the center point of the wheel by the value of the innerRadius. Some correction for line width is needed.
-                        let iX = Math.cos(this.degToRad(seg.startAngle + this.rotationAngle - 90)) * (innerRadius - lineWidth / 2);
-                        let iY = Math.sin(this.degToRad(seg.startAngle + this.rotationAngle - 90)) * (innerRadius - lineWidth / 2);
+                        var iX = Math.cos(this.degToRad(seg.startAngle + this.rotationAngle - 90)) * (innerRadius - lineWidth / 2);
+                        var iY = Math.sin(this.degToRad(seg.startAngle + this.rotationAngle - 90)) * (innerRadius - lineWidth / 2);
 
                         // Now move here relative to the center point of the wheel.
                         this.ctx.moveTo(centerX + iX, centerY + iY);
@@ -704,7 +680,7 @@ Winwheel.prototype.drawSegments = function()
 
                     if (this.innerRadius) {
                         // Draw another arc, this time anticlockwise <-- at the innerRadius between the end angle and the start angle.
-                        // Canvas will draw a connecting line from the end of the outer arc to the beginning of the inner arc completing the shape.
+                        // Canvas will draw a connecting line from the end of the outer arc to the beginning of the inner arc compvaring the shape.
                         this.ctx.arc(centerX, centerY, innerRadius, this.degToRad(seg.endAngle + this.rotationAngle - 90), this.degToRad(seg.startAngle + this.rotationAngle - 90), true);
                     } else {
                         // If no inner radius then we draw a line back to the center of the wheel.
@@ -736,31 +712,31 @@ Winwheel.prototype.drawSegmentText = function()
     if (this.ctx) {
         // Declare variables to hold the values. These are populated either with the value for the specific segment,
         // or if not specified then the global default value.
-        let fontFamily;
-        let fontSize;
-        let fontWeight;
-        let orientation;
-        let alignment;
-        let direction;
-        let margin;
-        let fillStyle;
-        let strokeStyle;
-        let lineWidth;
-        let fontSetting;
+        var fontFamily;
+        var fontSize;
+        var fontWeight;
+        var orientation;
+        var alignment;
+        var direction;
+        var margin;
+        var fillStyle;
+        var strokeStyle;
+        var lineWidth;
+        var fontSetting;
 
         // Get the centerX and centerY scaled with the scale factor, also the same for outer and inner radius.
-        let centerX = (this.centerX * this.scaleFactor);
-        let centerY = (this.centerY * this.scaleFactor);
-        let outerRadius = (this.outerRadius * this.scaleFactor);
-        let innerRadius = (this.innerRadius * this.scaleFactor);
+        var centerX = (this.centerX * this.scaleFactor);
+        var centerY = (this.centerY * this.scaleFactor);
+        var outerRadius = (this.outerRadius * this.scaleFactor);
+        var innerRadius = (this.innerRadius * this.scaleFactor);
 
         // Loop though all the segments.
-        for (let x = 1; x <= this.numSegments; x ++) {
+        for (var x = 1; x <= this.numSegments; x ++) {
             // Save the context so it is certain that each segment text option will not affect the other.
             this.ctx.save();
 
             // Get the segment object as we need it to read options from.
-            let seg = this.segments[x];
+            var seg = this.segments[x];
 
             // Check is text as no point trying to draw if there is no text to render.
             if (seg.text) {
@@ -782,7 +758,7 @@ Winwheel.prototype.drawSegmentText = function()
 
                 // ------------------------------
                 // We need to put the font bits together in to one string.
-                let fontSetting = '';
+                var fontSetting = '';
 
                 if (fontWeight != null) {
                     fontSetting += fontWeight + ' ';
@@ -803,11 +779,11 @@ Winwheel.prototype.drawSegmentText = function()
                 this.ctx.lineWidth   = lineWidth;
 
                 // Split the text in to multiple lines on the \n character.
-                let lines = seg.text.split('\n');
+                var lines = seg.text.split('\n');
 
                 // Figure out the starting offset for the lines as when there are multiple lines need to center the text
                 // vertically in the segment (when thinking of normal horozontal text).
-                let lineOffset = 0 - (fontSize * (lines.length / 2)) + (fontSize / 2);
+                var lineOffset = 0 - (fontSize * (lines.length / 2)) + (fontSize / 2);
 
                 // The offset works great for horozontal and vertial text, also centered curved. But when the text is curved
                 // and the alignment is outer then the multiline text should not have some text outside the wheel. Same if inner curved.
@@ -815,7 +791,7 @@ Winwheel.prototype.drawSegmentText = function()
                     lineOffset = 0;
                 }
 
-                for (let i = 0; i < lines.length; i ++) {
+                for (var i = 0; i < lines.length; i ++) {
                     // If direction is reversed then do things differently than if normal (which is the default - see further down)
                     if (direction == 'reversed') {
                         // When drawing reversed or 'upside down' we need to do some trickery on our part.
@@ -834,7 +810,7 @@ Winwheel.prototype.drawSegmentText = function()
                             this.ctx.textBaseline = 'middle';
 
                             // Work out the angle to rotate the wheel, this is in the center of the segment but on the opposite side of the wheel which is why do -180.
-                            let textAngle = this.degToRad((seg.endAngle - ((seg.endAngle - seg.startAngle) / 2) + this.rotationAngle - 90) - 180);
+                            var textAngle = this.degToRad((seg.endAngle - ((seg.endAngle - seg.startAngle) / 2) + this.rotationAngle - 90) - 180);
 
                             this.ctx.save();
                             this.ctx.translate(centerX, centerY);
@@ -886,7 +862,7 @@ Winwheel.prototype.drawSegmentText = function()
                                 this.ctx.textBaseline = 'middle';
                             }
 
-                            let textAngle = (seg.endAngle - ((seg.endAngle - seg.startAngle) / 2) - 180);
+                            var textAngle = (seg.endAngle - ((seg.endAngle - seg.startAngle) / 2) - 180);
                             textAngle += this.rotationAngle;
 
                             this.ctx.save();
@@ -895,7 +871,7 @@ Winwheel.prototype.drawSegmentText = function()
                             this.ctx.translate(-centerX, -centerY);
 
                             //++ @TODO double-check the default of 0 is correct.
-                            let yPos = 0;
+                            var yPos = 0;
                             if (alignment == 'outer') {
                                 yPos = (centerY + outerRadius - margin);
                             } else if (alignment == 'inner') {
@@ -903,13 +879,13 @@ Winwheel.prototype.drawSegmentText = function()
                             }
 
                             // I have found that the text looks best when a fraction of the font size is shaved off.
-                            let yInc = (fontSize - (fontSize / 9));
+                            var yInc = (fontSize - (fontSize / 9));
 
                             // Loop though and output the characters.
                             if (alignment == 'outer') {
                                 // In reversed mode outer means text in 6 o'clock segment sits at bottom of the wheel and we draw up.
-                                for (let c = (lines[i].length -1); c >= 0; c--) {
-                                    let character = lines[i].charAt(c);
+                                for (var c = (lines[i].length -1); c >= 0; c--) {
+                                    var character = lines[i].charAt(c);
 
                                     if (fillStyle) {
                                         this.ctx.fillText(character, centerX + lineOffset, yPos);
@@ -923,8 +899,8 @@ Winwheel.prototype.drawSegmentText = function()
                                 }
                             } else if (alignment == 'inner') {
                                 // In reversed mode inner text is drawn from top of segment at 6 o'clock position to bottom of the wheel.
-                                for (let c = 0; c < lines[i].length; c++) {
-                                    let character = lines[i].charAt(c);
+                                for (var c = 0; c < lines[i].length; c++) {
+                                    var character = lines[i].charAt(c);
 
                                     if (fillStyle) {
                                         this.ctx.fillText(character, centerX + lineOffset, yPos);
@@ -940,16 +916,16 @@ Winwheel.prototype.drawSegmentText = function()
                                 // Again for reversed this is the opposite of before.
                                 // If there is more than one character in the text then an adjustment to the position needs to be done.
                                 // What we are aiming for is to position the center of the text at the center point between the inner and outer radius.
-                                let centerAdjustment = 0;
+                                var centerAdjustment = 0;
 
                                 if (lines[i].length > 1) {
                                     centerAdjustment = (yInc * (lines[i].length -1) / 2);
                                 }
 
-                                let yPos = (centerY + innerRadius + ((outerRadius - innerRadius) / 2)) + centerAdjustment + margin;
+                                var yPos = (centerY + innerRadius + ((outerRadius - innerRadius) / 2)) + centerAdjustment + margin;
 
-                                for (let c = (lines[i].length -1); c >= 0; c--) {
-                                    let character = lines[i].charAt(c);
+                                for (var c = (lines[i].length -1); c >= 0; c--) {
+                                    var character = lines[i].charAt(c);
 
                                     if (fillStyle) {
                                         this.ctx.fillText(character, centerX + lineOffset, yPos);
@@ -968,7 +944,7 @@ Winwheel.prototype.drawSegmentText = function()
                         } else if (orientation == 'curved') {
                             // There is no built in canvas function to draw text around an arc,
                             // so we need to do this ourselves.
-                            let radius = 0;
+                            var radius = 0;
 
                             // Set the alignment of the text - inner, outer, or center by calculating
                             // how far out from the center point of the wheel the text is drawn.
@@ -992,8 +968,8 @@ Winwheel.prototype.drawSegmentText = function()
 
                             // Set the angle to increment by when looping though and outputting the characters in the text
                             // as we do this by rotating the wheel small amounts adding each character.
-                            let anglePerChar = 0;
-                            let drawAngle = 0;
+                            var anglePerChar = 0;
+                            var drawAngle = 0;
 
                             // If more than one character in the text then...
                             if (lines[i].length > 1) {
@@ -1006,17 +982,17 @@ Winwheel.prototype.drawSegmentText = function()
                                 anglePerChar = (4 * (fontSize / 10));
 
                                 // Work out what percentage the radius the text will be drawn at is of 100px.
-                                let radiusPercent = (100 / radius);
+                                var radiusPercent = (100 / radius);
 
                                 // Then use this to scale up or down the anglePerChar value.
-                                // When the radius is less than 100px we need more angle between the letters, when radius is greater (so the text is further
+                                // When the radius is less than 100px we need more angle between the varters, when radius is greater (so the text is further
                                 // away from the center of the wheel) the angle needs to be less otherwise the characters will appear further apart.
                                 anglePerChar = (anglePerChar * radiusPercent);
 
                                 // Next we want the text to be drawn in the middle of the segment, without this it would start at the beginning of the segment.
                                 // To do this we need to work out how much arc the text will take up in total then subtract half of this from the center
                                 // of the segment so that it sits centred.
-                                let totalArc = (anglePerChar * lines[i].length);
+                                var totalArc = (anglePerChar * lines[i].length);
 
                                 // Now set initial draw angle to half way between the start and end of the segment.
                                 drawAngle = seg.startAngle + (((seg.endAngle - seg.startAngle) / 2) - (totalArc / 2));
@@ -1039,10 +1015,10 @@ Winwheel.prototype.drawSegmentText = function()
                             // ----------------------
                             // Now the drawing itself.
                             // In reversed direction mode we loop through the characters in the text backwards in order for them to appear on screen correctly
-                            for (let c = lines[i].length; c >= 0; c--) {
+                            for (var c = lines[i].length; c >= 0; c--) {
                                 this.ctx.save();
 
-                                let character = lines[i].charAt(c);
+                                var character = lines[i].charAt(c);
 
                                 // Rotate the wheel to the draw angle as we need to add the character at this location.
                                 this.ctx.translate(centerX, centerY);
@@ -1084,7 +1060,7 @@ Winwheel.prototype.drawSegmentText = function()
 
                             // Work out the angle around the wheel to draw the text at, which is simply in the middle of the segment the text is for.
                             // The rotation angle is added in to correct the annoyance with the canvas arc drawing functions which put the 0 degrees at the 3 oclock
-                            let textAngle = this.degToRad(seg.endAngle - ((seg.endAngle - seg.startAngle) / 2) + this.rotationAngle - 90);
+                            var textAngle = this.degToRad(seg.endAngle - ((seg.endAngle - seg.startAngle) / 2) + this.rotationAngle - 90);
 
                             // We need to rotate in order to draw the text because it is output horizontally, so to
                             // place correctly around the wheel for all but a segment at 3 o'clock we need to rotate.
@@ -1165,7 +1141,7 @@ Winwheel.prototype.drawSegmentText = function()
                             }
 
                             // The angle to draw the text at is halfway between the end and the starting angle of the segment.
-                            let textAngle = seg.endAngle - ((seg.endAngle - seg.startAngle) / 2);
+                            var textAngle = seg.endAngle - ((seg.endAngle - seg.startAngle) / 2);
 
                             // Ensure the rotation angle of the wheel is added in, otherwise the test placement won't match
                             // the segments they are supposed to be for.
@@ -1180,7 +1156,7 @@ Winwheel.prototype.drawSegmentText = function()
                             // Work out the position to start drawing in based on the alignment.
                             // If outer then when considering a segment at the 12 o'clock position want to start drawing down from the top of the wheel.
                             //++ TODO check this as yPos did not seem to have a defualt before.
-                            let yPos = 0;
+                            var yPos = 0;
 
                             if (alignment == 'outer') {
                                 yPos = (centerY - outerRadius + margin);
@@ -1189,16 +1165,16 @@ Winwheel.prototype.drawSegmentText = function()
                             }
 
                             // We need to know how much to move the y axis each time.
-                            // This is not quite simply the font size as that puts a larger gap in between the letters
+                            // This is not quite simply the font size as that puts a larger gap in between the varters
                             // than expected, especially with monospace fonts. I found that shaving a little off makes it look "right".
-                            let yInc = (fontSize - (fontSize / 9));
+                            var yInc = (fontSize - (fontSize / 9));
 
                             // Loop though and output the characters.
                             if (alignment == 'outer') {
                                 // For this alignment we draw down from the top of a segment at the 12 o'clock position to simply
                                 // loop though the characters in order.
-                                for (let c = 0; c < lines[i].length; c++) {
-                                    let character = lines[i].charAt(c);
+                                for (var c = 0; c < lines[i].length; c++) {
+                                    var character = lines[i].charAt(c);
 
                                     if (fillStyle) {
                                         this.ctx.fillText(character, centerX + lineOffset, yPos);
@@ -1211,10 +1187,10 @@ Winwheel.prototype.drawSegmentText = function()
                                     yPos += yInc;
                                 }
                             } else if (alignment == 'inner') {
-                                // Here we draw from the inner of the wheel up, but in order for the letters in the text text to
+                                // Here we draw from the inner of the wheel up, but in order for the varters in the text text to
                                 // remain in the correct order when reading, we actually need to loop though the text characters backwards.
-                                for (let c = (lines[i].length -1); c >= 0; c--) {
-                                    let character = lines[i].charAt(c);
+                                for (var c = (lines[i].length -1); c >= 0; c--) {
+                                    var character = lines[i].charAt(c);
 
                                     if (fillStyle) {
                                         this.ctx.fillText(character, centerX + lineOffset, yPos);
@@ -1234,7 +1210,7 @@ Winwheel.prototype.drawSegmentText = function()
 
                                 // If there is more than one character in the text then an adjustment to the position needs to be done.
                                 // What we are aiming for is to position the center of the text at the center point between the inner and outer radius.
-                                let centerAdjustment = 0;
+                                var centerAdjustment = 0;
 
                                 if (lines[i].length > 1) {
                                     centerAdjustment = (yInc * (lines[i].length -1) / 2);
@@ -1243,11 +1219,11 @@ Winwheel.prototype.drawSegmentText = function()
                                 // Now work out where to start rendering the string. This is half way between the inner and outer of the wheel, with the
                                 // centerAdjustment included to correctly position texts with more than one character over the center.
                                 // If there is a margin it is used to push the text away from the center of the wheel.
-                                let yPos = (centerY - innerRadius - ((outerRadius - innerRadius) / 2)) - centerAdjustment - margin;
+                                var yPos = (centerY - innerRadius - ((outerRadius - innerRadius) / 2)) - centerAdjustment - margin;
 
                                 // Now loop and draw just like outer text rendering.
-                                for (let c = 0; c < lines[i].length; c++) {
-                                    let character = lines[i].charAt(c);
+                                for (var c = 0; c < lines[i].length; c++) {
+                                    var character = lines[i].charAt(c);
 
                                     if (fillStyle) {
                                         this.ctx.fillText(character, centerX + lineOffset, yPos);
@@ -1266,7 +1242,7 @@ Winwheel.prototype.drawSegmentText = function()
                         } else if (orientation == 'curved') {
                             // There is no built in canvas function to draw text around an arc, so
                             // we need to do this ourselves.
-                            let radius = 0;
+                            var radius = 0;
 
                             // Set the alignment of the text - inner, outer, or center by calculating
                             // how far out from the center point of the wheel the text is drawn.
@@ -1290,8 +1266,8 @@ Winwheel.prototype.drawSegmentText = function()
 
                             // Set the angle to increment by when looping though and outputting the characters in the text
                             // as we do this by rotating the wheel small amounts adding each character.
-                            let anglePerChar = 0;
-                            let drawAngle = 0;
+                            var anglePerChar = 0;
+                            var drawAngle = 0;
 
                             // If more than one character in the text then...
                             if (lines[i].length > 1) {
@@ -1304,17 +1280,17 @@ Winwheel.prototype.drawSegmentText = function()
                                 anglePerChar = (4 * (fontSize / 10));
 
                                 // Work out what percentage the radius the text will be drawn at is of 100px.
-                                let radiusPercent = (100 / radius);
+                                var radiusPercent = (100 / radius);
 
                                 // Then use this to scale up or down the anglePerChar value.
-                                // When the radius is less than 100px we need more angle between the letters, when radius is greater (so the text is further
+                                // When the radius is less than 100px we need more angle between the varters, when radius is greater (so the text is further
                                 // away from the center of the wheel) the angle needs to be less otherwise the characters will appear further apart.
                                 anglePerChar = (anglePerChar * radiusPercent);
 
                                 // Next we want the text to be drawn in the middle of the segment, without this it would start at the beginning of the segment.
                                 // To do this we need to work out how much arc the text will take up in total then subtract half of this from the center
                                 // of the segment so that it sits centred.
-                                let totalArc = (anglePerChar * lines[i].length);
+                                var totalArc = (anglePerChar * lines[i].length);
 
                                 // Now set initial draw angle to half way between the start and end of the segment.
                                 drawAngle = seg.startAngle + (((seg.endAngle - seg.startAngle) / 2) - (totalArc / 2));
@@ -1333,10 +1309,10 @@ Winwheel.prototype.drawSegmentText = function()
                             // ----------------------
                             // Now the drawing itself.
                             // Loop for each character in the text.
-                            for (let c = 0; c < (lines[i].length); c++) {
+                            for (var c = 0; c < (lines[i].length); c++) {
                                 this.ctx.save();
 
-                                let character = lines[i].charAt(c);
+                                var character = lines[i].charAt(c);
 
                                 // Rotate the wheel to the draw angle as we need to add the character at this location.
                                 this.ctx.translate(centerX, centerY);
@@ -1396,17 +1372,17 @@ Winwheel.prototype.setCenter = function(x, y)
 Winwheel.prototype.addSegment = function(options, position)
 {
     // Create a new segment object passing the options in.
-    let newSegment = new Segment(options);
+    var newSegment = new Segment(options);
 
     // Increment the numSegments property of the class since new segment being added.
     this.numSegments ++;
-    let segmentPos;
+    var segmentPos;
 
     // Work out where to place the segment, the default is simply as a new segment at the end of the wheel.
     if (typeof position !== 'undefined') {
         // Because we need to insert the segment at this position, not overwrite it, we need to move all segments after this
         // location along one in the segments array, before finally adding this new segment at the specified location.
-        for (let x = this.numSegments; x > position; x --) {
+        for (var x = this.numSegments; x > position; x --) {
             this.segments[x] = this.segments[x -1];
         }
 
@@ -1445,12 +1421,12 @@ Winwheel.prototype.setCanvasId = function(canvasId)
 }
 
 // ====================================================================================================================
-// This function deletes the specified segment from the wheel by removing it from the segments array.
+// This function devares the specified segment from the wheel by removing it from the segments array.
 // It then sorts out the other bits such as update of the numSegments.
 // ====================================================================================================================
-Winwheel.prototype.deleteSegment = function(position)
+Winwheel.prototype.devareSegment = function(position)
 {
-    // There needs to be at least one segment in order for the wheel to draw, so only allow delete if there
+    // There needs to be at least one segment in order for the wheel to draw, so only allow devare if there
     // is more than one segment currently left in the wheel.
 
     //++ check that specifying a position that does not exist - say 10 in a 6 segment wheel does not cause issues.
@@ -1459,7 +1435,7 @@ Winwheel.prototype.deleteSegment = function(position)
         if (typeof position !== 'undefined') {
             // The array is to be shortened so we need to move all segments after the one
             // to be removed down one so there is no gap.
-            for (let x = position; x < this.numSegments; x ++) {
+            for (var x = position; x < this.numSegments; x ++) {
                 this.segments[x] = this.segments[x + 1];
             }
         }
@@ -1480,7 +1456,7 @@ Winwheel.prototype.deleteSegment = function(position)
 // ====================================================================================================================
 Winwheel.prototype.windowToCanvas = function(x, y)
 {
-    let bbox = this.canvas.getBoundingClientRect();
+    var bbox = this.canvas.getBoundingClientRect();
 
     return {
         x: Math.floor(x - bbox.left * (this.canvas.width / bbox.width)),
@@ -1494,10 +1470,10 @@ Winwheel.prototype.windowToCanvas = function(x, y)
 // ====================================================================================================================
 Winwheel.prototype.getSegmentAt = function(x, y)
 {
-    let foundSegment = null;
+    var foundSegment = null;
 
     // Call function to return segment number.
-    let segmentNumber = this.getSegmentNumberAt(x, y);
+    var segmentNumber = this.getSegmentNumberAt(x, y);
 
     // If found one then set found segment to pointer to the segment object.
     if (segmentNumber !== null) {
@@ -1515,23 +1491,23 @@ Winwheel.prototype.getSegmentNumberAt = function(x, y)
 {
     // Call function above to convert the raw x and y from the user's browser to canvas coordinates
     // i.e. top and left is top and left of canvas, not top and left of the user's browser.
-    let loc = this.windowToCanvas(x, y);
+    var loc = this.windowToCanvas(x, y);
 
     // ------------------------------------------
     // Now start the process of working out the segment clicked.
     // First we need to figure out the angle of an imaginary line between the centerX and centerY of the wheel and
     // the X and Y of the location (for example a mouse click).
-    let topBottom;
-    let leftRight;
-    let adjacentSideLength;
-    let oppositeSideLength;
-    let hypotenuseSideLength;
+    var topBottom;
+    var leftRight;
+    var adjacentSideLength;
+    var oppositeSideLength;
+    var hypotenuseSideLength;
 
     // Get the centerX and centerY scaled with the scale factor, also the same for outer and inner radius.
-    let centerX = (this.centerX * this.scaleFactor);
-    let centerY = (this.centerY * this.scaleFactor);
-    let outerRadius = (this.outerRadius * this.scaleFactor);
-    let innerRadius = (this.innerRadius * this.scaleFactor);
+    var centerX = (this.centerX * this.scaleFactor);
+    var centerY = (this.centerY * this.scaleFactor);
+    var outerRadius = (this.outerRadius * this.scaleFactor);
+    var innerRadius = (this.innerRadius * this.scaleFactor);
 
     // We will use right triangle maths with the TAN function.
     // The start of the triangle is the wheel center, the adjacent side is along the x axis, and the opposite side is along the y axis.
@@ -1556,11 +1532,11 @@ Winwheel.prototype.getSegmentNumberAt = function(x, y)
     }
 
     // Now divide opposite by adjacent to get tan value.
-    let tanVal = oppositeSideLength / adjacentSideLength;
+    var tanVal = oppositeSideLength / adjacentSideLength;
 
     // Use the tan function and convert results to degrees since that is what we work with.
-    let result = (Math.atan(tanVal) * 180/Math.PI);
-    let locationAngle = 0;
+    var result = (Math.atan(tanVal) * 180/Math.PI);
+    var locationAngle = 0;
 
     // We also need the length of the hypotenuse as later on we need to compare this to the outerRadius of the segment / circle.
     hypotenuseSideLength = Math.sqrt((oppositeSideLength * oppositeSideLength) + (adjacentSideLength * adjacentSideLength));
@@ -1582,7 +1558,7 @@ Winwheel.prototype.getSegmentNumberAt = function(x, y)
     // And now we have to adjust to make sense when the wheel is rotated from the 0 degrees either
     // positive or negative and it can be many times past 360 degrees.
     if (this.rotationAngle != 0) {
-        let rotatedPosition = this.getRotationPosition();
+        var rotatedPosition = this.getRotationPosition();
 
         // So we have this, now we need to alter the locationAngle as a result of this.
         locationAngle = (locationAngle - rotatedPosition);
@@ -1597,9 +1573,9 @@ Winwheel.prototype.getSegmentNumberAt = function(x, y)
     // OK, so after all of that we have the angle of a line between the centerX and centerY of the wheel and
     // the X and Y of the location on the canvas where the mouse was clicked. Now time to work out the segment
     // this corresponds to. We can use the segment start and end angles for this.
-    let foundSegmentNumber = null;
+    var foundSegmentNumber = null;
 
-    for (let x = 1; x <= this.numSegments; x ++) {
+    for (var x = 1; x <= this.numSegments; x ++) {
         // Due to segments sharing start and end angles, if line is clicked will pick earlier segment.
         if ((locationAngle >= this.segments[x].startAngle) && (locationAngle <= this.segments[x].endAngle)) {
             // To ensure that a click anywhere on the canvas in the segment direction will not cause a
@@ -1628,7 +1604,7 @@ Winwheel.prototype.getSegmentNumberAt = function(x, y)
 Winwheel.prototype.getIndicatedSegment = function()
 {
     // Call function below to work this out and return the prizeNumber.
-    let prizeNumber = this.getIndicatedSegmentNumber();
+    var prizeNumber = this.getIndicatedSegmentNumber();
 
     // Then simply return the segment in the segments array at that position.
     return this.segments[prizeNumber];
@@ -1640,19 +1616,19 @@ Winwheel.prototype.getIndicatedSegment = function()
 // ====================================================================================================================
 Winwheel.prototype.getIndicatedSegmentNumber = function()
 {
-    let indicatedPrize = 0;
-    let rawAngle = this.getRotationPosition();
+    var indicatedPrize = 0;
+    var rawAngle = this.getRotationPosition();
 
     // Now we have the angle of the wheel, but we need to take in to account where the pointer is because
     // will not always be at the 12 o'clock 0 degrees location.
-    let relativeAngle = Math.floor(this.pointerAngle - rawAngle);
+    var relativeAngle = Math.floor(this.pointerAngle - rawAngle);
 
     if (relativeAngle < 0) {
         relativeAngle = 360 - Math.abs(relativeAngle);
     }
 
     // Now we can work out the prize won by seeing what prize segment startAngle and endAngle the relativeAngle is between.
-    for (let x = 1; x < (this.segments.length); x ++) {
+    for (var x = 1; x < (this.segments.length); x ++) {
         if ((relativeAngle >= this.segments[x]['startAngle']) && (relativeAngle <= this.segments[x]['endAngle'])) {
             indicatedPrize = x;
             break;
@@ -1668,25 +1644,25 @@ Winwheel.prototype.getIndicatedSegmentNumber = function()
 // ====================================================================================================================
 Winwheel.prototype.getCurrentPinNumber = function()
 {
-    let currentPin = 0;
+    var currentPin = 0;
 
     if (this.pins) {
-        let rawAngle = this.getRotationPosition();
+        var rawAngle = this.getRotationPosition();
 
         // Now we have the angle of the wheel, but we need to take in to account where the pointer is because
         // will not always be at the 12 o'clock 0 degrees location.
-        let relativeAngle = Math.floor(this.pointerAngle - rawAngle);
+        var relativeAngle = Math.floor(this.pointerAngle - rawAngle);
 
         if (relativeAngle < 0) {
             relativeAngle = 360 - Math.abs(relativeAngle);
         }
 
         // Work out the angle of the pins as this is simply 360 / the number of pins as they space evenly around.
-        let pinSpacing = (360 / this.pins.number);
-        let totalPinAngle = 0;
+        var pinSpacing = (360 / this.pins.number);
+        var totalPinAngle = 0;
 
         // Now we can work out the pin by seeing what pins relativeAngle is between.
-        for (let x = 0; x < (this.pins.number); x ++) {
+        for (var x = 0; x < (this.pins.number); x ++) {
             if ((relativeAngle >= totalPinAngle) && (relativeAngle <= (totalPinAngle + pinSpacing))) {
                 currentPin = x;
                 break;
@@ -1714,13 +1690,13 @@ Winwheel.prototype.getCurrentPinNumber = function()
 // ==================================================================================================================================================
 Winwheel.prototype.getRotationPosition = function()
 {
-    let rawAngle = this.rotationAngle;  // Get current rotation angle of wheel.
+    var rawAngle = this.rotationAngle;  // Get current rotation angle of wheel.
 
     // If positive work out how many times past 360 this is and then take the floor of this off the rawAngle.
     if (rawAngle >= 0) {
         if (rawAngle > 360) {
             // Get floor of the number of times past 360 degrees.
-            let timesPast360 = Math.floor(rawAngle / 360);
+            var timesPast360 = Math.floor(rawAngle / 360);
 
             // Take all this extra off to get just the angle 0-360 degrees.
             rawAngle = (rawAngle - (360 * timesPast360));
@@ -1729,7 +1705,7 @@ Winwheel.prototype.getRotationPosition = function()
         // Is negative, need to take off the extra then convert in to 0-360 degree value
         // so if, for example, was -90 then final value will be (360 - 90) = 270 degrees.
         if (rawAngle < -360) {
-            let timesPast360 = Math.ceil(rawAngle / 360);   // Ceil when negative.
+            var timesPast360 = Math.ceil(rawAngle / 360);   // Ceil when negative.
 
             rawAngle = (rawAngle - (360 * timesPast360));   // Is minus because dealing with negative.
         }
@@ -1754,13 +1730,13 @@ Winwheel.prototype.startAnimation = function()
         winwheelToDrawDuringAnimation = this;
 
         // Put together the properties of the greesock animation.
-        let properties = new Array(null);
+        var properties = new Array(null);
         properties[this.animation.propertyName] = this.animation.propertyValue; // Here we set the property to be animated and its value.
         properties['yoyo']       = this.animation.yoyo;     // Set others.
         properties['repeat']     = this.animation.repeat;
         properties['ease']       = this.animation.easing;
         properties['onUpdate']   = winwheelAnimationLoop;   // Call function to re-draw the canvas.
-        properties['onComplete'] = winwheelStopAnimation;   // Call function to perform actions when animation has finished.
+        properties['onCompvare'] = winwheelStopAnimation;   // Call function to perform actions when animation has finished.
 
         // Do the tween animation passing the properties from the animation object as an array of key => value pairs.
         // Keep reference to the tween object in the wheel as that allows pausing, resuming, and stopping while the animation is still running.
@@ -1947,13 +1923,13 @@ Winwheel.prototype.computeAnimation = function()
 // ====================================================================================================================
 Winwheel.prototype.getRandomForSegment = function(segmentNumber)
 {
-    let stopAngle = 0;
+    var stopAngle = 0;
 
     if (segmentNumber) {
         if (typeof this.segments[segmentNumber] !== 'undefined') {
-            let startAngle = this.segments[segmentNumber].startAngle;
-            let endAngle = this.segments[segmentNumber].endAngle;
-            let range = (endAngle - startAngle) - 2;
+            var startAngle = this.segments[segmentNumber].startAngle;
+            var endAngle = this.segments[segmentNumber].endAngle;
+            var range = (endAngle - startAngle) - 2;
 
             if (range > 0) {
                 stopAngle = (startAngle + 1 + Math.floor((Math.random() * range)));
@@ -1975,7 +1951,7 @@ Winwheel.prototype.getRandomForSegment = function(segmentNumber)
 // ====================================================================================================================
 function Pin(options)
 {
-    let defaultOptions = {
+    var defaultOptions = {
         'visible'        : true,     // In future there might be some functionality related to the pins even if they are not displayed.
         'number'         : 36,       // The number of pins. These are evenly distributed around the wheel.
         'outerRadius'    : 3,        // Radius of the pins which determines their size.
@@ -1988,7 +1964,7 @@ function Pin(options)
 
     // Now loop through the default options and create properties of this class set to the value for
     // the option passed in if a value was, or if not then set the value of the default.
-    for (let key in defaultOptions) {
+    for (var key in defaultOptions) {
         if ((options != null) && (typeof(options[key]) !== 'undefined')) {
             this[key] = options[key];
         } else {
@@ -1998,7 +1974,7 @@ function Pin(options)
 
     // Also loop though the passed in options and add anything specified not part of the class in to it as a property.
     if (options != null) {
-        for (let key in options) {
+        for (var key in options) {
             if (typeof(this[key]) === 'undefined') {
                 this[key] = options[key];
             }
@@ -2012,7 +1988,7 @@ function Pin(options)
 function Animation(options)
 {
     // Most of these options are null because the defaults are different depending on the type of animation.
-    let defaultOptions = {
+    var defaultOptions = {
         'type'              : 'spinOngoing',   // For now there are only supported types are spinOngoing (continuous), spinToStop, spinAndBack, custom.
         'direction'         : 'clockwise',     // clockwise or anti-clockwise.
         'propertyName'      : null,            // The name of the winning wheel property to be affected by the animation.
@@ -2022,7 +1998,7 @@ function Animation(options)
         'repeat'            : null,            // The number of times the animation is to repeat, -1 will cause it to repeat forever.
         'easing'            : null,            // The easing to use for the animation, default is the best for spin to stop. Use Linear.easeNone for no easing.
         'stopAngle'         : null,            // Used for spinning, the angle at which the wheel is to stop.
-        'spins'             : null,            // Used for spinning, the number of complete 360 degree rotations the wheel is to do.
+        'spins'             : null,            // Used for spinning, the number of compvare 360 degree rotations the wheel is to do.
         'clearTheCanvas'    : null,            // If set to true the canvas will be cleared before the wheel is re-drawn, false it will not, null the animation will abide by the value of this property for the parent wheel object.
         'callbackFinished'  : null,            // Function to callback when the animation has finished.
         'callbackBefore'    : null,            // Function to callback before the wheel is drawn each animation loop.
@@ -2033,7 +2009,7 @@ function Animation(options)
 
     // Now loop through the default options and create properties of this class set to the value for
     // the option passed in if a value was, or if not then set the value of the default.
-    for (let key in defaultOptions) {
+    for (var key in defaultOptions) {
         if ((options != null) && (typeof(options[key]) !== 'undefined')) {
             this[key] = options[key];
         } else {
@@ -2043,7 +2019,7 @@ function Animation(options)
 
     // Also loop though the passed in options and add anything specified not part of the class in to it as a property.
     if (options != null) {
-        for (let key in options) {
+        for (var key in options) {
             if (typeof(this[key]) === 'undefined') {
                 this[key] = options[key];
             }
@@ -2058,7 +2034,7 @@ function Segment(options)
 {
     // Define default options for segments, most are null so that the global defaults for the wheel
     // are used if the values for a particular segment are not specifically set.
-    let defaultOptions = {
+    var defaultOptions = {
         'size'              : null, // Leave null for automatic. Valid values are degrees 0-360. Use percentToDegrees function if needed to convert.
         'text'              : '',   // Default is blank.
         'fillStyle'         : null, // If null for the rest the global default will be used.
@@ -2081,7 +2057,7 @@ function Segment(options)
 
     // Now loop through the default options and create properties of this class set to the value for
     // the option passed in if a value was, or if not then set the value of the default.
-    for (let key in defaultOptions) {
+    for (var key in defaultOptions) {
         if ((options != null) && (typeof(options[key]) !== 'undefined')) {
             this[key] = options[key];
         } else {
@@ -2092,7 +2068,7 @@ function Segment(options)
     // Also loop though the passed in options and add anything specified not part of the class in to it as a property.
     // This allows the developer to easily add properties to segments at construction time.
     if (options != null) {
-        for (let key in options) {
+        for (var key in options) {
             if (typeof(this[key]) === 'undefined') {
                 this[key] = options[key];
             }
@@ -2133,7 +2109,7 @@ Segment.prototype.changeImage = function(image, imageDirection)
 // ====================================================================================================================
 function PointerGuide(options)
 {
-    let defaultOptions = {
+    var defaultOptions = {
         'display'     : false,
         'strokeStyle' : 'red',
         'lineWidth'   : 3
@@ -2141,7 +2117,7 @@ function PointerGuide(options)
 
     // Now loop through the default options and create properties of this class set to the value for
     // the option passed in if a value was, or if not then set the value of the default.
-    for (let key in defaultOptions) {
+    for (var key in defaultOptions) {
         if ((options != null) && (typeof(options[key]) !== 'undefined')) {
             this[key] = options[key];
         } else {
@@ -2155,10 +2131,10 @@ function PointerGuide(options)
 // ====================================================================================================================
 function winwheelPercentToDegrees(percentValue)
 {
-    let degrees = 0;
+    var degrees = 0;
 
     if ((percentValue > 0) && (percentValue <= 100)) {
-        let divider = (percentValue / 100);
+        var divider = (percentValue / 100);
         degrees = (360 * divider);
     }
 
@@ -2177,8 +2153,8 @@ function winwheelAnimationLoop()
             winwheelToDrawDuringAnimation.ctx.clearRect(0, 0, winwheelToDrawDuringAnimation.canvas.width, winwheelToDrawDuringAnimation.canvas.height);
         }
 
-        let callbackBefore = winwheelToDrawDuringAnimation.animation.callbackBefore;
-        let callbackAfter = winwheelToDrawDuringAnimation.animation.callbackAfter;
+        var callbackBefore = winwheelToDrawDuringAnimation.animation.callbackBefore;
+        var callbackAfter = winwheelToDrawDuringAnimation.animation.callbackAfter;
 
         // If there is a callback function which is supposed to be called before the wheel is drawn then do that.
         if (callbackBefore != null) {
@@ -2222,8 +2198,8 @@ function winwheelTriggerSound()
         winwheelToDrawDuringAnimation._lastSoundTriggerNumber = 0;
     }
 
-    let callbackSound = winwheelToDrawDuringAnimation.animation.callbackSound;
-    let currentTriggerNumber = 0;
+    var callbackSound = winwheelToDrawDuringAnimation.animation.callbackSound;
+    var currentTriggerNumber = 0;
 
     // Now figure out if the sound callback should be called depending on the sound trigger type.
     if (winwheelToDrawDuringAnimation.animation.soundTrigger == 'pin') {
@@ -2252,14 +2228,14 @@ function winwheelTriggerSound()
 // ====================================================================================================================
 // This function is called-back when the greensock animation has finished.
 // ====================================================================================================================
-let winwheelToDrawDuringAnimation = null;  // This global is set by the winwheel class to the wheel object to be re-drawn.
+var winwheelToDrawDuringAnimation = null;  // This global is set by the winwheel class to the wheel object to be re-drawn.
 
 function winwheelStopAnimation(canCallback)
 {
     // When the animation is stopped if canCallback is not false then try to call the callback.
     // false can be passed in to stop the after happening if the animation has been stopped before it ended normally.
     if (canCallback != false) {
-        let callback = winwheelToDrawDuringAnimation.animation.callbackFinished;
+        var callback = winwheelToDrawDuringAnimation.animation.callbackFinished;
 
         if (callback != null) {
             // If the callback is a function then call it, otherwise evaluate the property as javascript code.
@@ -2277,18 +2253,18 @@ function winwheelStopAnimation(canCallback)
 // Called after the image has loaded for each segment. Once all the images are loaded it then calls the draw function
 // on the wheel to render it. Used in constructor and also when a segment image is changed.
 // ====================================================================================================================
-let winhweelAlreadyDrawn = false;
+var winhweelAlreadyDrawn = false;
 
 function winwheelLoadedImage()
 {
     // Prevent multiple drawings of the wheel which ocurrs without this check due to timing of function calls.
     if (winhweelAlreadyDrawn == false) {
         // Set to 0.
-        let winwheelImageLoadCount = 0;
+        var winwheelImageLoadCount = 0;
 
         // Loop though all the segments of the wheel and check if image data loaded, if so increment counter.
-        for (let i = 1; i <= winwheelToDrawDuringAnimation.numSegments; i ++) {
-            // Check the image data object is not null and also that the image has completed loading by checking
+        for (var i = 1; i <= winwheelToDrawDuringAnimation.numSegments; i ++) {
+            // Check the image data object is not null and also that the image has compvared loading by checking
             // that a property of it such as the height has some sort of true value.
             if ((winwheelToDrawDuringAnimation.segments[i].imgData != null) && (winwheelToDrawDuringAnimation.segments[i].imgData.height)) {
                 winwheelImageLoadCount ++;
@@ -2313,7 +2289,7 @@ function winwheelResize()
     // By default set the margin to 40px, this can be overridden if needed.
     // This is to stop the canvas going right to the right edge of the screen and being overlayed by a scrollbar though
     // if the canvas is center aligned, half the magin will be applied to each side since the margin actually reduces the width of the canvas.
-    let margin = 40;
+    var margin = 40;
 
     // If a value has been specified for this then update the margin to it.
     if (typeof(winwheelToDrawDuringAnimation._responsiveMargin) !== 'undefined') {
@@ -2321,9 +2297,9 @@ function winwheelResize()
     }
 
     // Get the current width and also optional min and max width properties.
-    let width = window.innerWidth - margin;
-    let minWidth = winwheelToDrawDuringAnimation._responsiveMinWidth;
-    let minHeight = winwheelToDrawDuringAnimation._responsiveMinHeight;
+    var width = window.innerWidth - margin;
+    var minWidth = winwheelToDrawDuringAnimation._responsiveMinWidth;
+    var minHeight = winwheelToDrawDuringAnimation._responsiveMinHeight;
 
     // Adjust the width as it cannot be larger than the original size of the wheel and we don't want
     // the canvas and wheel inside it to be too small so check the min width.
@@ -2334,14 +2310,14 @@ function winwheelResize()
     }
 
     // Work out the percent the new width is smaller than the original width.
-    let percent = (width / winwheelToDrawDuringAnimation._originalCanvasWidth);
+    var percent = (width / winwheelToDrawDuringAnimation._originalCanvasWidth);
 
     // Set the canvas width to the width to a percentage of the original width.
     winwheelToDrawDuringAnimation.canvas.width = (winwheelToDrawDuringAnimation._originalCanvasWidth * percent);
 
     // Scale the height if we are supposed to but ensure it does not go below the minHeight.
     if (winwheelToDrawDuringAnimation._responsiveScaleHeight) {
-        let height = (winwheelToDrawDuringAnimation._originalCanvasHeight * percent);
+        var height = (winwheelToDrawDuringAnimation._originalCanvasHeight * percent);
 
         if (height < minHeight) {
             height = minHeight;
@@ -2358,15 +2334,3 @@ function winwheelResize()
     // Now re-draw the wheel to ensure the changes in size are rendered.
     winwheelToDrawDuringAnimation.draw();
 }
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
