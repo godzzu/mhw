@@ -47,3 +47,8 @@
 		$(".content").children().remove();
 		$(".content").load('../simulator/'+path+'.html');
 	}
+
+	function etc(path){
+		$(".content").children().remove();
+		$(".content").load('../etc/'+path+'.html');
+	}
