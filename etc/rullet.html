@@ -20,7 +20,7 @@
                                 </tr>
                             </table>
                             <br />
-                            <img id="spin_button" src="spin_off.png" alt="Spin" onClick="startSpin();" />
+                            <img id="spin_button" src="../images/spin_off.png" alt="Spin" onClick="startSpin();" />
                             <br /><br />
                             &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">Play Again</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(reset)
                         </div>
@@ -35,7 +35,7 @@
         </div>
         <script>
             // Create new wheel object specifying the parameters at creation time.
-            let theWheel = new Winwheel({
+            var theWheel = new Winwheel({
                 'numSegments'  : 8,     // Specify number of segments.
                 'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
                 'textFontSize' : 28,    // Set font size as desired.
@@ -60,8 +60,8 @@
             });
 
             // Vars used by the code in this page to do power controls.
-            let wheelPower    = 0;
-            let wheelSpinning = false;
+            var wheelPower    = 0;
+            var wheelSpinning = false;
 
             // -------------------------------------------------------
             // Function to handle the onClick on the power buttons.
