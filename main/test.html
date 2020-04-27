@@ -45,13 +45,9 @@
                     </td>
                 </tr>
             </table>
-        </div>
-
-        <input type="text" id="add_element" />
-        <button id="add" onClick="setting()">추가</button>
-        <button id="del" onClick="delete_seg()">지우기</button>
-        <div id="seg_list">
-
+            <br/><br/>
+            <input type="text" id="add_element" style="width:300px; height:25px;"/>
+            <button id="add" style="width:50px; height:30px;" onClick="setting()">추가</button>
         </div>
         <script>
 
@@ -89,7 +85,6 @@
                     let clickedSegment = theWheel.getSegmentNumberAt(e.clientX, e.clientY);
 
                     if(clickedSegment){
-                        alert(clickedSegment);
                         delete_seg(clickedSegment);
                     }
                 }
@@ -111,9 +106,6 @@
                     theWheel.deleteSegment();
                     theWheel.draw();
                 }
-
-                list += '<a href="#" onClick="delete_seg('+index+');">'+text+'</a>&nbsp;';
-                $("#seg_list").html(list);
                 
             }
             function delete_seg(idx){
