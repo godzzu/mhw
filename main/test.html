@@ -41,8 +41,12 @@
                 </tr>
             </table>
         </div>
+
+        <input type="text" id="add_element" />
+        <button id="add" onClick="setting()" value="SET"/>
         <script>
-            // Create new wheel object specifying the parameters at creation time.
+            function setting(){
+                // Create new wheel object specifying the parameters at creation time.
             let theWheel = new Winwheel({
                 'numSegments'  : 8,     // Specify number of segments.
                 'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
@@ -67,6 +71,8 @@
                 }
             });
 
+            }
+            
             // Vars used by the code in this page to do power controls.
             let wheelPower    = 0;
             let wheelSpinning = false;
