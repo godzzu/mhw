@@ -43,7 +43,6 @@ Winwheel.prototype.addSegment=function(a,c){
 Winwheel.prototype.setCanvasId=function(a){if(a){if(this.canvasId=a,this.canvas=document.getElementById(this.canvasId))this.ctx=this.canvas.getContext("2d")}else this.canvas=this.ctx=this.canvasId=null};
 Winwheel.prototype.deleteSegment=function(a){
 	if(1<this.numSegments){
-		alert(a);
 		if("undefined"!==typeof a)
 			for(;a<this.numSegments;a++)
 				this.segments[a]=this.segments[a+1];
@@ -51,12 +50,19 @@ Winwheel.prototype.deleteSegment=function(a){
 			this.numSegments--;this.updateSegmentSizes()
 		}
 	};
-Winwheel.prototype.windowToCanvas=function(a,c){var b=this.canvas.getBoundingClientRect();return{x:Math.floor(a-this.canvas.width/b.width*b.left),y:Math.floor(c-this.canvas.height/b.height*b.top)}};Winwheel.prototype.getSegmentAt=function(a,c){var b=null,d=this.getSegmentNumberAt(a,c);null!==d&&(b=this.segments[d]);return b};
+Winwheel.prototype.windowToCanvas=function(a,c){var b=this.canvas.getBoundingClientRect();return{x:Math.floor(a-this.canvas.width/b.width*b.left),y:Math.floor(c-this.canvas.height/b.height*b.top)}};
+Winwheel.prototype.getSegmentAt=function(a,c){
+	var b=null,d=this.getSegmentNumberAt(a,c);null!==d&&(b=this.segments[d]);return b};
 Winwheel.prototype.getSegmentNumberAt=function(a,c){
 	var b=this.windowToCanvas(a,c);
 	var d=this.centerX*this.scaleFactor;
-	var e=this.centerY*this.scaleFactor;var t=this.outerRadius*this.scaleFactor,h=this.innerRadius*this.scaleFactor;if(b.x>d){var n=b.x-d;d="R"}else n=d-b.x,d="L";if(b.y>e){var r=b.y-e;e="B"}else r=e-b.y,e="T";var f=180*Math.atan(r/n)/Math.PI;b=0;n=Math.sqrt(r*r+n*n);"T"==e&&"R"==d?b=Math.round(90-f):"B"==e&&"R"==d?b=Math.round(f+90):"B"==e&&"L"==d?b=Math.round(90-f+180):"T"==e&&"L"==
-d&&(b=Math.round(f+270));0!=this.rotationAngle&&(d=this.getRotationPosition(),b-=d,0>b&&(b=360-Math.abs(b)));d=null;for(e=1;e<=this.numSegments;e++)if(b>=this.segments[e].startAngle&&b<=this.segments[e].endAngle&&n>=h&&n<=t){d=e;break}return d};Winwheel.prototype.getIndicatedSegment=function(){var a=this.getIndicatedSegmentNumber();return this.segments[a]};
+	var e=this.centerY*this.scaleFactor;
+	var t=this.outerRadius*this.scaleFactor,h=this.innerRadius*this.scaleFactor;
+	if(b.x>d){var n=b.x-d;d="R"}
+	else n=d-b.x,d="L";if(b.y>e){var r=b.y-e;e="B"}
+	else r=e-b.y,e="T";var f=180*Math.atan(r/n)/Math.PI;b=0;n=Math.sqrt(r*r+n*n);"T"==e&&"R"==d?b=Math.round(90-f):"B"==e&&"R"==d?b=Math.round(f+90):"B"==e&&"L"==d?b=Math.round(90-f+180):"T"==e&&"L"==
+d&&(b=Math.round(f+270));0!=this.rotationAngle&&(d=this.getRotationPosition(),b-=d,0>b&&(b=360-Math.abs(b)));d=null;for(e=1;e<=this.numSegments;e++)if(b>=this.segments[e].startAngle&&b<=this.segments[e].endAngle&&n>=h&&n<=t){d=e;break}return d};
+Winwheel.prototype.getIndicatedSegment=function(){var a=this.getIndicatedSegmentNumber();return this.segments[a]};
 Winwheel.prototype.getIndicatedSegmentNumber=function(){var a=0,c=this.getRotationPosition();c=Math.floor(this.pointerAngle-c);0>c&&(c=360-Math.abs(c));for(var b=1;b<this.segments.length;b++)if(c>=this.segments[b].startAngle&&c<=this.segments[b].endAngle){a=b;break}return a};
 Winwheel.prototype.getCurrentPinNumber=function(){var a=0;if(this.pins){var c=this.getRotationPosition();c=Math.floor(this.pointerAngle-c);0>c&&(c=360-Math.abs(c));for(var b=360/this.pins.number,d=0,e=0;e<this.pins.number;e++){if(c>=d&&c<=d+b){a=e;break}d+=b}"clockwise"==this.animation.direction&&(a++,a>this.pins.number&&(a=0))}return a};Winwheel.prototype.getRotationPosition=function(){var a=this.rotationAngle;0<=a?360<a&&(a-=360*Math.floor(a/360)):(-360>a&&(a-=360*Math.ceil(a/360)),a=360+a);return a};
 Winwheel.prototype.startAnimation=function(){if(this.animation){this.computeAnimation();winwheelToDrawDuringAnimation=this;var a=Array(null);a[this.animation.propertyName]=this.animation.propertyValue;a.yoyo=this.animation.yoyo;a.repeat=this.animation.repeat;a.ease=this.animation.easing;a.onUpdate=winwheelAnimationLoop;a.onComplete=winwheelStopAnimation;this.tween=TweenMax.to(this,this.animation.duration,a)}};

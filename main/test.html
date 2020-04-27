@@ -81,6 +81,19 @@
             var segments = "";
             var list = "";
             var index = 1;
+
+
+                let canvas = document.getElementById('canvas');
+
+                canvas.onclick = function(e){
+                    let clickedSegment = theWheel.getSegmentNumberAt(e.clientX, e.clientY);
+
+                    if(clickedSegment){
+                        alert(clickedSegment);
+                        delete_seg(clickedSegment);
+                    }
+                }
+
             function setting(){
                 var text = document.getElementById('add_element').value;
 
@@ -99,13 +112,12 @@
                     theWheel.draw();
                 }
 
-                list += '<a href="#" onClick="delete_seg('+index+');">'+text+'</a>';
+                list += '<a href="#" onClick="delete_seg('+index+');">'+text+'</a>&nbsp;';
                 $("#seg_list").html(list);
                 
             }
             function delete_seg(idx){
-                
-                alert(idx);
+
                     theWheel.deleteSegment(idx);
                     theWheel.draw();
                 
