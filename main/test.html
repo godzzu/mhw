@@ -46,6 +46,7 @@
 
         <input type="text" id="add_element" />
         <button id="add" onClick="setting()">추가</button>
+        <button id="del" onClick="delete_seg()">지우기</button>
         <script>
 
             // Create new wheel object specifying the parameters at creation time.
@@ -90,6 +91,12 @@
                     theWheel.deleteSegment();
                     theWheel.draw();
                 }
+                
+            }
+            function delete_seg(){
+                
+                    theWheel.deleteSegment();
+                    theWheel.draw();
                 
             }
             // -------------------------------------------------------
