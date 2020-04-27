@@ -27,11 +27,35 @@ q-=180,u=a[f].length;0<=u;u--){this.ctx.save();var x=a[f].charAt(u);this.ctx.tra
 p);this.ctx.rotate(this.degToRad(m));this.ctx.translate(-l,-p);k=0;"outer"==e?k=p-w+h:"inner"==e&&(k=p-v-h);m=c-c/9;if("outer"==e)for(q=0;q<a[f].length;q++)u=a[f].charAt(q),n&&this.ctx.fillText(u,l+b,k),r&&this.ctx.strokeText(u,l+b,k),k+=m;else if("inner"==e)for(q=a[f].length-1;0<=q;q--)u=a[f].charAt(q),n&&this.ctx.fillText(u,l+b,k),r&&this.ctx.strokeText(u,l+b,k),k-=m;else if("center"==e)for(k=0,1<a[f].length&&(k=m*(a[f].length-1)/2),k=p-v-(w-v)/2-k-h,q=0;q<a[f].length;q++)u=a[f].charAt(q),n&&this.ctx.fillText(u,
 l+b,k),r&&this.ctx.strokeText(u,l+b,k),k+=m;this.ctx.restore()}else if("curved"==d)for(m=0,"inner"==e?(m=v+h,this.ctx.textBaseline="bottom",m+=c*(a.length-1)):"outer"==e?(m=w-h,this.ctx.textBaseline="top"):"center"==e&&(m=v+h+(w-v)/2,this.ctx.textBaseline="middle"),k=0,1<a[f].length?(this.ctx.textAlign="left",k=c/10*4,k*=100/m,q=g.startAngle+((g.endAngle-g.startAngle)/2-k*a[f].length/2)):(q=g.startAngle+(g.endAngle-g.startAngle)/2,this.ctx.textAlign="center"),q+=this.rotationAngle,u=0;u<a[f].length;u++)this.ctx.save(),
 x=a[f].charAt(u),this.ctx.translate(l,p),this.ctx.rotate(this.degToRad(q)),this.ctx.translate(-l,-p),r&&this.ctx.strokeText(x,l,p-m+b),n&&this.ctx.fillText(x,l,p-m+b),q+=k,this.ctx.restore();b+=c}}this.ctx.restore()}};Winwheel.prototype.degToRad=function(a){return.017453292519943295*a};Winwheel.prototype.setCenter=function(a,c){this.centerX=a;this.centerY=c};
-Winwheel.prototype.addSegment=function(a,c){var b=new Segment(a);this.numSegments++;if("undefined"!==typeof c){for(var d=this.numSegments;d>c;d--)this.segments[d]=this.segments[d-1];this.segments[c]=b;b=c}else this.segments[this.numSegments]=b,b=this.numSegments;this.updateSegmentSizes();return this.segments[b]};
+Winwheel.prototype.addSegment=function(a,c){
+	var b=new Segment(a);
+	this.numSegments++;
+	if("undefined"!==typeof c){
+		for(var d=this.numSegments;d>c;d--)
+			this.segments[d]=this.segments[d-1];
+		this.segments[c]=b;b=c
+	}else 
+	this.segments[this.numSegments]=b,
+	b=this.numSegments;
+	this.updateSegmentSizes();
+	return this.segments[b]
+};
 Winwheel.prototype.setCanvasId=function(a){if(a){if(this.canvasId=a,this.canvas=document.getElementById(this.canvasId))this.ctx=this.canvas.getContext("2d")}else this.canvas=this.ctx=this.canvasId=null};
-Winwheel.prototype.deleteSegment=function(a){if(1<this.numSegments){if("undefined"!==typeof a)for(;a<this.numSegments;a++)this.segments[a]=this.segments[a+1];this.segments[this.numSegments]=void 0;this.numSegments--;this.updateSegmentSizes()}};
+Winwheel.prototype.deleteSegment=function(a){
+	if(1<this.numSegments){
+		alert(a);
+		if("undefined"!==typeof a)
+			for(;a<this.numSegments;a++)
+				this.segments[a]=this.segments[a+1];
+			this.segments[this.numSegments]=void 0;
+			this.numSegments--;this.updateSegmentSizes()
+		}
+	};
 Winwheel.prototype.windowToCanvas=function(a,c){var b=this.canvas.getBoundingClientRect();return{x:Math.floor(a-this.canvas.width/b.width*b.left),y:Math.floor(c-this.canvas.height/b.height*b.top)}};Winwheel.prototype.getSegmentAt=function(a,c){var b=null,d=this.getSegmentNumberAt(a,c);null!==d&&(b=this.segments[d]);return b};
-Winwheel.prototype.getSegmentNumberAt=function(a,c){var b=this.windowToCanvas(a,c);var d=this.centerX*this.scaleFactor;var e=this.centerY*this.scaleFactor;var t=this.outerRadius*this.scaleFactor,h=this.innerRadius*this.scaleFactor;if(b.x>d){var n=b.x-d;d="R"}else n=d-b.x,d="L";if(b.y>e){var r=b.y-e;e="B"}else r=e-b.y,e="T";var f=180*Math.atan(r/n)/Math.PI;b=0;n=Math.sqrt(r*r+n*n);"T"==e&&"R"==d?b=Math.round(90-f):"B"==e&&"R"==d?b=Math.round(f+90):"B"==e&&"L"==d?b=Math.round(90-f+180):"T"==e&&"L"==
+Winwheel.prototype.getSegmentNumberAt=function(a,c){
+	var b=this.windowToCanvas(a,c);
+	var d=this.centerX*this.scaleFactor;
+	var e=this.centerY*this.scaleFactor;var t=this.outerRadius*this.scaleFactor,h=this.innerRadius*this.scaleFactor;if(b.x>d){var n=b.x-d;d="R"}else n=d-b.x,d="L";if(b.y>e){var r=b.y-e;e="B"}else r=e-b.y,e="T";var f=180*Math.atan(r/n)/Math.PI;b=0;n=Math.sqrt(r*r+n*n);"T"==e&&"R"==d?b=Math.round(90-f):"B"==e&&"R"==d?b=Math.round(f+90):"B"==e&&"L"==d?b=Math.round(90-f+180):"T"==e&&"L"==
 d&&(b=Math.round(f+270));0!=this.rotationAngle&&(d=this.getRotationPosition(),b-=d,0>b&&(b=360-Math.abs(b)));d=null;for(e=1;e<=this.numSegments;e++)if(b>=this.segments[e].startAngle&&b<=this.segments[e].endAngle&&n>=h&&n<=t){d=e;break}return d};Winwheel.prototype.getIndicatedSegment=function(){var a=this.getIndicatedSegmentNumber();return this.segments[a]};
 Winwheel.prototype.getIndicatedSegmentNumber=function(){var a=0,c=this.getRotationPosition();c=Math.floor(this.pointerAngle-c);0>c&&(c=360-Math.abs(c));for(var b=1;b<this.segments.length;b++)if(c>=this.segments[b].startAngle&&c<=this.segments[b].endAngle){a=b;break}return a};
 Winwheel.prototype.getCurrentPinNumber=function(){var a=0;if(this.pins){var c=this.getRotationPosition();c=Math.floor(this.pointerAngle-c);0>c&&(c=360-Math.abs(c));for(var b=360/this.pins.number,d=0,e=0;e<this.pins.number;e++){if(c>=d&&c<=d+b){a=e;break}d+=b}"clockwise"==this.animation.direction&&(a++,a>this.pins.number&&(a=0))}return a};Winwheel.prototype.getRotationPosition=function(){var a=this.rotationAngle;0<=a?360<a&&(a-=360*Math.floor(a/360)):(-360>a&&(a-=360*Math.ceil(a/360)),a=360+a);return a};

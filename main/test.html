@@ -4,6 +4,9 @@
     <head>
         <title>test</title>
         <link rel="stylesheet" href="../css/rullet.css" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="../css/1.10.0.jquery-ui.css">
+        <script src="../js/jquery-1.7.2.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui.js" type="text/javascript"></script>
         <script type="text/javascript" src="../js/winwheel.js"></script>
         <script type="text/javascript" src="../js/tweenmax.min.js"></script>
     </head>
@@ -47,6 +50,9 @@
         <input type="text" id="add_element" />
         <button id="add" onClick="setting()">추가</button>
         <button id="del" onClick="delete_seg()">지우기</button>
+        <div id="seg_list">
+
+        </div>
         <script>
 
             // Create new wheel object specifying the parameters at creation time.
@@ -73,7 +79,8 @@
             let wheelSpinning = false;
 
             var segments = "";
-            var index = 0;
+            var list = "";
+            var index = 1;
             function setting(){
                 var text = document.getElementById('add_element').value;
 
@@ -87,15 +94,19 @@
                 theWheel.draw();
 
 
-                if(index == 1){
+                if(index == 2){
                     theWheel.deleteSegment();
                     theWheel.draw();
                 }
+
+                list += '<a href="#" onClick="delete_seg('+index+');">'+text+'</a>';
+                $("#seg_list").html(list);
                 
             }
-            function delete_seg(){
+            function delete_seg(idx){
                 
-                    theWheel.deleteSegment();
+                alert(idx);
+                    theWheel.deleteSegment(idx);
                     theWheel.draw();
                 
             }
