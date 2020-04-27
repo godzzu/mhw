@@ -1,4 +1,6 @@
+
 <html>
+
     <head>
         <title>test</title>
         <link rel="stylesheet" href="../css/rullet.css" type="text/css" />
@@ -30,7 +32,7 @@
                             <br />
                             <img id="spin_button" src="../images/spin_off.png" alt="Spin" onClick="startSpin();" />
                             <br /><br />
-                            &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">Play Again</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(reset)
+                            &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">다시돌리기</a><br />
                         </div>
                     </td>
                     <td width="438" height="582" class="the_wheel" align="center" valign="center">
@@ -43,40 +45,53 @@
         </div>
 
         <input type="text" id="add_element" />
-        <button id="add" onClick="setting()" value="SET"/>
+        <button id="add" onClick="setting()">추가</button>
         <script>
-            function setting(){
-                // Create new wheel object specifying the parameters at creation time.
+
+            // Create new wheel object specifying the parameters at creation time.
             let theWheel = new Winwheel({
-                'numSegments'  : 8,     // Specify number of segments.
-                'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
-                'textFontSize' : 28,    // Set font size as desired.
-                'segments'     :        // Define segments including colour and text.
-                [
-                   {'fillStyle' : '#eae56f', 'text' : 'Prize 1'},
-                   {'fillStyle' : '#89f26e', 'text' : 'Prize 2'},
-                   {'fillStyle' : '#7de6ef', 'text' : 'Prize 3'},
-                   {'fillStyle' : '#e7706f', 'text' : 'Prize 4'},
-                   {'fillStyle' : '#eae56f', 'text' : 'Prize 5'},
-                   {'fillStyle' : '#89f26e', 'text' : 'Prize 6'},
-                   {'fillStyle' : '#7de6ef', 'text' : 'Prize 7'},
-                   {'fillStyle' : '#e7706f', 'text' : 'Prize 8'}
-                ],
-                'animation' :           // Specify the animation to use.
-                {
+                    'numSegments'  : 1,     // Specify number of segments.
+                    'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
+                    'textFontSize' : 15,    // Set font size as desired.
+                    'segments'     :        // Define segments including colour and text.
+                        [
+                            {'text' : 'godzzu'}
+                        ],
+                    'animation' :           // Specify the animation to use.
+                        {
                     'type'     : 'spinToStop',
                     'duration' : 5,     // Duration in seconds.
                     'spins'    : 8,     // Number of complete spins.
                     'callbackFinished' : alertPrize
-                }
-            });
+                    }
+                });
 
-            }
-            
+
             // Vars used by the code in this page to do power controls.
             let wheelPower    = 0;
             let wheelSpinning = false;
 
+            var segments = "";
+            var index = 0;
+            function setting(){
+                var text = document.getElementById('add_element').value;
+
+                index++;
+
+                theWheel.addSegment({
+                    'text' : text,
+                    'fileStyle' : 'aqua'
+                }, 1);
+            
+                theWheel.draw();
+
+
+                if(index == 1){
+                    theWheel.deleteSegment();
+                    theWheel.draw();
+                }
+                
+            }
             // -------------------------------------------------------
             // Function to handle the onClick on the power buttons.
             // -------------------------------------------------------
