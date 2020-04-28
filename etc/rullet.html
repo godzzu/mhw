@@ -82,19 +82,56 @@
             function setting(){
                 var text = document.getElementById('add_element').value;
 
-                index++;
+                if(text.substring(0,1) == '!'){
 
-                theWheel.addSegment({
-                    'text' : text,
-                    'fillStyle' : '#f7f8e0'
-                }, 1);
-            
-                theWheel.draw();
+                    var number = text.substring(1,text.length);
+                    //정규식
+                    var regexp = /^[0-9]*$/;
+
+                    if(!regexp.test(number)){
+                        alert("숫자만 입력 가능합니다.");
+                        return;
+                    }else{
+                        var arr_text = new Array();
+
+                        for(var i=1;i<=number;i++){
+                            arr_text.push(i);
+                        }
+
+                        for(var a=0;a<arr_text.length;a++){
+                            index++;
+
+                            console.log(arr_text);
+
+                            theWheel.addSegment({
+                                'text' : ""+arr_text[a]+"",
+                                'fillStyle' : '#f7f8e0'
+                            }, 1);
+                        
+                            theWheel.draw();
 
 
-                if(index == 2){
-                    theWheel.deleteSegment();
+                            if(index == 2){
+                                theWheel.deleteSegment();
+                                theWheel.draw();
+                            }
+                        }
+                    }
+                }else{
+                    index++;
+
+                    theWheel.addSegment({
+                        'text' : text,
+                        'fileStyle' : 'aqua'
+                    }, 1);
+                
                     theWheel.draw();
+
+
+                    if(index == 2){
+                        theWheel.deleteSegment();
+                        theWheel.draw();
+                    }
                 }
                 
             }
