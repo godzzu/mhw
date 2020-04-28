@@ -35,6 +35,9 @@
             <br/><br/>
             <input type="text" id="add_element" style="width:300px; height:25px;"/>
             <button id="add" style="width:50px; height:30px;" onClick="setting()">추가</button>
+            <br/><br/>
+            <textarea id="add_elements" rows="10", cols="100" placeholder="추가할 내용을 ,로 구분하여 입력"></textarea>
+            <button id="add2" style="width:50px; height:30px;" onClick="setting_all()">한번에추가</button>
         </div>
         <script>
 
@@ -95,6 +98,35 @@
                 }
                 
             }
+
+            function setting_all(){
+                var text = document.getElementById('add_elements').value;
+                text = text.replace(/(\s*)/g, "");
+
+                var arr_text[] = text.split(",");
+
+                for(var a=0;a<arr_text.length;a++){
+
+                    index++;
+
+                    theWheel.addSegment({
+                        'text' : arr_text[a],
+                        'fillStyle' : '#f7f8e0'
+                    }, 1);
+                
+                    theWheel.draw();
+
+
+                    if(index == 2){
+                        theWheel.deleteSegment();
+                        theWheel.draw();
+                    }
+
+                }
+                
+                
+            }
+
             function delete_seg(idx){
 
                     theWheel.deleteSegment(idx);
