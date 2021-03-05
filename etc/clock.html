@@ -1,13 +1,11 @@
 <div align="center">
-     <span id="clocktext" style="font-kerning:none"></span>      
+    <div id="clockDiv">
+        <span id="clocktext"></span>      
+    </div>
 </div>
 <script>
-    "use strict";
-
     var textElem = document.getElementById("clocktext");
-    var targetWidth = 0.9;
-    var curFontSize = 20;
-
+    
     function updateClock(){
         var d = new Date();
         var s = "";
@@ -18,14 +16,5 @@
         setTimeout(updateClock, 1000 - d.getTime() % 1000 + 20);
     }
 
-    function updateTextSize(){
-        for(var i = 0; 3 > i; i++){
-            curFontSize += targetWidth / (textElem.offsetWidth / textElem.parentNode.offsetWidth);
-            textElem.style.fontSize = curfontSize + "pt";
-        }
-    }
-
     updateClock();
-    updateTextSize();
-    window.addEventListener("resize", updateTextSize);
 </script>
