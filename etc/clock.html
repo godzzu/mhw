@@ -1,10 +1,8 @@
-
-    <div id="clockDiv" style="background: #000000;
-    font-family: sans-serif;
-    font-weight: bold;
-    color: #ffffff;">
+<div align="center">
+    <div id="clockDiv">
         <span id="clocktext"></span>      
     </div>
+</div>
 <script>
     var textElem = document.getElementById("clocktext");
     
@@ -14,7 +12,7 @@
         s += (10>d.getHours() ? "0" : "") + d.getHours() + ":";
         s += (10>d.getMinutes() ? "0" : "") + d.getMinutes() + ":";
         s += (10>d.getSeconds() ? "0" : "") + d.getSeconds();
-        textElem.textContent - s;
+        textElem.textContent = s;
         setTimeout(updateClock, 1000 - d.getTime() % 1000 + 20);
     }
 
