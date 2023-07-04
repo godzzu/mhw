@@ -1,0 +1,508 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		tablecloth();
+	});
+</script>
+<h1>시리즈 스킬</h1>
+
+<br /><h2>상위 시리즈</h2><br />
+<div class="sp_table_scroll">
+
+<table border="0" class="tablesorter" name="mainTable">
+<thead>
+	<tr>
+		<th>스킬명</th>
+		<th>조건 및 효과</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td class="fixed_width2">
+			각룡의 비기<br/>
+			(디아블로스, <br/>
+			디아블로스 아종)
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">2</td>
+						<td class="fixed_width2">둔기 사용</td>
+						<td>
+							예리도가 나쁠 수록 공격력 상승<br/>
+							원거리 무기의 근접공격 사용 시 공격력 +30, 기절치 상승<br/><br/>
+							* 예리도 녹색 : 공격력 +15<br/>
+							예리도 노랑색 : 공격력 +25<br/>
+							예리도 주황, 빨강색 : 공격력 +30
+						</td>
+					</tr>
+					<tr>
+						<td class="skill_level_td">4</td>
+						<td class="fixed_width2">무속성 강화</td>
+						<td>
+							무속성 무기의 기초 공격력 1.05배<br/><br/>
+							* 슬래시액스는 병 이외의 속성이 무속성이면 무속성 강화 적용가능<br/>
+							병 사용시 1.05배 공격력 함께 적용됨<br/>
+							* 보우건의 경우 속성탄(화염탄, 수냉탄, 빙결탄, 전격탄, 멸룡탄)을<br/>
+							사용할 수 없는 무기에만 무속성 강화 적용 가능<br/>
+							* 활은 무속성 강화 적용 시 상태이상병 사용에도 공격력 상승
+						</td>
+					</tr>
+					<tr></tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			강룡의 비상<br/>
+			(크샬다오라)
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">3</td>
+						<td class="fixed_width2">풍압 완전 무효</td>
+						<td>모든 풍압 무효화</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			길드의 안내
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">4</td>
+						<td class="fixed_width2">강운</td>
+						<td>
+							퀘스트 클리어 시 받을 수 있는 보상이 증가<br/>
+							퀘스트 도중 참가 한 경우에는 효과를 얻을 수 없음
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			만악룡의 투지<br/>
+			(안쟈나프)
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">2</td>
+						<td class="fixed_width2">분발</td>
+						<td>체력이 40% 이하가 되면 일정시간 스태미나 소비량 감소</td>
+					</tr>
+					<tr>
+						<td class="skill_level_td">4</td>
+						<td>스태미나 한계 돌파</td>
+						<td>스태미나의 최대치가 200으로 상승</td>
+					</tr>
+					<tr></tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			멸진룡의 굶주림<br/>
+			(네르기간테)
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">3</td>
+						<td class="fixed_width2">가속 재생</td>
+						<td>
+							지속적으로 몬스터에게 공격을 성공시키면 체력이 회복됨<br/>
+							무기 종류에 따라 회복량이 달라짐<br/><br/>
+							* 타수의 지속성에 대해<br/>
+							20~150프레임(0.7~5초)의 간격을 가지고 5번의 공격 시 마다<br/>
+							회복 효과 발동(마지막 타에만)<br/>
+							이 때 공격은 반드시 동일한 대상이 아니어도 됨<br/><br/>
+							* 무기별 회복량
+							<table border="0" class="tablesorter">
+								<thead>
+									<th>무기 종류</th>
+									<th>회복량</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td>대검 / 해머 / 건랜스 / 수렵피리</td>
+										<td>20</td>
+									</tr>
+									<tr>
+										<td>태도 / 랜스 / 슬래시액스 / 차지액스 / 조충곤</td>
+										<td>10</td>
+									</tr>
+									<tr>
+										<td>한손검 / 쌍검 / 활 / 라이트보우건 / 헤비보우건</td>
+										<td>5</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			명등룡의 신비<br/>
+			(제노지바)
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">3</td>
+						<td class="fixed_width2">명검/탄환 절약</td>
+						<td>
+							약 1/2확률로 예리도 소비 억제<br/>
+							약 1/5확률로 보우건의 탄, 활의 병을 소비하지 않고 발사할 수 있음
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			시투룡의 명맥<br/>
+			(발하자크)
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">3</td>
+						<td class="fixed_width2">슈퍼회복력</td>
+						<td>체력의 자동회복이 게이지의 최대치까지 지속</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			아스테라의 축복
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">5</td>
+						<td class="fixed_width2">행운</td>
+						<td>
+							퀘스트 클리어 시 받을 수 있는 보상이 증가<br/>
+							퀘스트 도중 참가 한 경우에는 효과를 얻을 수 없음
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			앵화룡의 비기<br/>
+			(리오레이아 아종)
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">3</td>
+						<td class="fixed_width2">독 데미지 강화</td>
+						<td>
+							몬스터에게 부여하는 독의 효과시간 증가
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			염비룡의 은총<br/>
+			(나나 테스카토리)
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">2</td>
+						<td class="fixed_width2">스태미나 한계 돌파</td>
+						<td>스태미나의 최대치가 200으로 상승</td>
+					</tr>
+					<tr>
+						<td class="skill_level_td">4</td>
+						<td class="fixed_width2">심안/탄도 강화</td>
+						<td>
+							공격이 튕겨 나가지 않음 / <br/>
+							탄과 화살이 최대위력이 되기까지의 거리가 짧아짐
+						</td>
+					</tr>
+					<tr></tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			염왕룡의 무예<br/>
+			(테오 테스카토르)
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">3</td>
+						<td class="fixed_width2">달인의 재주</td>
+						<td>회심 발생 시 예리도가 소모되지 않음</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			용기사의 증표<br/>
+			(베히모스)
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">2</td>
+						<td class="fixed_width2">비연[속성]</td>
+						<td>
+							점프 공격 시 속성치 증가<br/>
+							조충곤 2배, 그 외 1.5배
+						</td>
+					</tr>
+					<tr>
+						<td class="skill_level_td">4</td>
+						<td class="fixed_width2">달인의 재주</td>
+						<td>회심 발생 시 예리도가 소모되지 않음</td>
+					</tr>
+					<tr></tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			용산룡의 비기<br/>
+			(조라 마그다라오스)
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">3</td>
+						<td class="fixed_width2">회심격[특수]</td>
+						<td>
+							회심이 발생했을 때 주는 상태이상치(마비, 독, 수면, 폭파) 1.25배
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			위쳐의 마음가짐
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">2</td>
+						<td class="fixed_width2">이그니 강도</td>
+						<td>
+							'헌터의 룬스톤'을 '이그니 표식'으로<br/>
+							제스처 '위쳐3: 불을 다루는 마법'을 '위쳐3: 이그니 표식'으로 변경
+						</td>
+					</tr>
+					<tr>
+						<td class="skill_level_td">4</td>
+						<td class="fixed_width2">슈퍼회복력</td>
+						<td>체력의 자동회복이 게이지의 최대치까지 지속</td>
+					</tr>
+					<tr></tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			참조룡의 비기<br/>
+			(오도가론)
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">2</td>
+						<td class="fixed_width2">발도술[힘]</td>
+						<td>
+							발도공격에 기절치 추가, 발도공격 시 공격력+5<br/>
+							원거리 무기에도 적용됨
+						</td>
+					</tr>
+					<tr>
+						<td class="skill_level_td">4</td>
+						<td class="fixed_width2">칼날연마</td>
+						<td>
+							무기를 연마하면 1분동안 예리도가 떨어지지 않음<br/>
+							* 아이템 사용 강화(지속주) 효과 적용됨
+						</td>
+					</tr>
+					<tr></tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			폭린룡의 수호<br/>
+			(바젤기우스)
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">3</td>
+						<td class="fixed_width2">근성</td>
+						<td>
+							체력이 64이상일 때 즉사 데미지를 받아도 힘이 다하지 않고<br/>
+							체력 1남음 (1번 한정)<br/><br/>
+							* 식사스킬인 [야옹 근성]과 효과 중복되어<br/>
+							한번 힘이 다하기 전까지는 2회발동 가능<br/>
+							스킬 발동 시 통상스킬 먼저 사용됨<br/>
+							* 스킬 발동 중 체력바 근성발동 최소 체력위치에 화살표 표시됨<br/>
+							<img src="../images/skills/skill_konjo1.png"><br/>
+							< 근성 발동 유효 ><br/>
+							<img src="../images/skills/skill_konjo2.png"><br/>
+							< 근성 발동 무효 >
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			폭추룡의 수호<br/>
+			(우라간킨)
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">3</td>
+						<td class="fixed_width2">가드 강화</td>
+						<td>평소에 가드할 수 없는 공격도 가드할 수 있게 됨</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			풍표룡의 은총<br/>
+			(레이기에나)
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">2</td>
+						<td class="fixed_width2">행운</td>
+						<td>
+							퀘스트 클리어 시 받을 수 있는 보상이 증가<br/>
+							퀘스트 도중 참가 한 경우에는 효과를 얻을 수 없음
+						</td>
+					</tr>
+					<tr>
+						<td class="skill_level_td">4</td>
+						<td class="fixed_width2">활 모으기 단계 해제</td>
+						<td>
+							활의 모으기 단계가 1단계 증가<br/>
+							벽면 도약 사격이 강화 됨
+						</td>
+					</tr>
+					<tr></tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			화룡의 비기<br/>
+			(리오레우스, <br/>
+			리오레우스 아종)
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">2</td>
+						<td class="fixed_width2">회심격[속성]</td>
+						<td>
+							회심이 발생했을 때 주는 속성데미지(불, 물, 얼음, 번개, 용) 증가<br/>
+							속성강화스킬 등으로 속성이 상한치까지 올라있어도 별도로 계산됨<br/><br/>
+							* 대검 1.2배<br/>
+							라이트보우건, 헤비보우건 1.3배<br/>
+							한손검, 쌍검, 활 1.53배<br/>
+							그 이외 무기 1.35배
+						</td>
+					</tr>
+					<tr>
+						<td class="skill_level_td">4</td>
+						<td class="fixed_width2">심안/탄도 강화</td>
+						<td>
+							공격이 튕겨 나가지 않음 / <br/>
+							탄과 화살이 최대위력이 되기까지의 거리가 짧아짐
+						</td>
+					</tr>
+					<tr></tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="fixed_width2">
+			환수의 은총<br/>
+			(키린)
+		</td>
+		<td>
+			<table border="0" class="tablesorter">
+				<tbody>
+					<tr>
+						<td class="skill_level_td">3</td>
+						<td class="fixed_width2">포획 명인</td>
+						<td>
+							포획 시 받을 수 있는 보상이 증가<br/>
+							퀘스트 도중 참가 한 경우에는 효과를 얻을 수 없음
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+</tbody>
+</table>
+
+</div>

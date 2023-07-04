@@ -1,0 +1,426 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		tablecloth();
+	});
+</script>
+<h1>식사 스킬</h1>
+
+<br /><h2>각 스테이터스 상승치</h2><br />
+<div class="sp_table_scroll">
+
+<table border="0" class="tablesorter" name="mainTable">
+<thead>
+	<tr>
+		<th></th>
+		<th>헌터</th>
+		<th>동반자</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>공격력UP[소]</td>
+		<td>5</td>
+		<td>7</td>
+	</tr>
+	<tr>
+		<td>공격력UP[중]</td>
+		<td>10</td>
+		<td>14</td>
+	</tr>
+	<tr>
+		<td>공격력UP[대]</td>
+		<td>15</td>
+		<td>20</td>
+	</tr>
+	<tr>
+		<td>방어력UP[소]</td>
+		<td>5</td>
+		<td>7</td>
+	</tr>
+	<tr>
+		<td>방어력UP[중]</td>
+		<td>10</td>
+		<td>14</td>
+	</tr>
+	<tr>
+		<td>방어력UP[대]</td>
+		<td>15</td>
+		<td>20</td>
+	</tr>
+	<tr>
+		<td>속성내성UP[소]</td>
+		<td>5</td>
+		<td>10</td>
+	</tr>
+	<tr>
+		<td>속성내성UP[중]</td>
+		<td>10</td>
+		<td>20</td>
+	</tr>
+	<tr>
+		<td>속성내성UP[대]</td>
+		<td>15</td>
+		<td>30</td>
+	</tr>
+</tbody>
+</table>
+
+</div>
+
+<br /><h2>야옹 일일 스킬</h2><br />
+<div class="sp_table_scroll">
+
+<table border="0" class="tablesorter" name="mainTable">
+<thead>
+	<tr>
+		<th>스킬</th>
+		<th>효과</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>야옹! 뒤는 맡겨둬!</td>
+		<td>힘이 다했을 때 범위 안에 있는 동료의 체력을 회복</td>
+	</tr>
+	<tr>
+		<td>야옹 폭격</td>
+		<td>
+			통상탄, 관통탄, 산탄, 기폭용탄, 기관용탄, 저격용탄의 공격력 1.05배<br/>
+			사격 시 흔들림이 1단계 증가
+		</td>
+	</tr>
+	<tr>
+		<td>야옹 운반 철인</td>
+		<td>운반 중 공격을 받아도 움츠리지 않음</td>
+	</tr>
+	<tr>
+		<td>야옹 오뚝이술[소]</td>
+		<td>넘어졌다 일어날 때의 무적시간이 조금 증가</td>
+	</tr>
+	<tr>
+		<td>야옹 동반자 지도술</td>
+		<td>동반자의 성장이 빨라짐</td>
+	</tr>
+	<tr>
+		<td>야옹 보너스술</td>
+		<td>힘이 다해도 식사효과가 사라지지 않음</td>
+	</tr>
+	<tr>
+		<td>야옹 휴식술</td>
+		<td>
+			'앉기' 제스처를 선택한 순간부터 5초 후 이펙트 발생<br/>
+			일어난 후부터 30초간 공격력 상승
+		</td>
+	</tr>
+	<tr>
+		<td>야옹 억지술</td>
+		<td>
+			공격이 튕겨나간 뒤 곧바로 이어지는 공격에 공격력 1.05배<br/><br/>
+			* 연속으로 튕길 시 1.05 x 1.05 x..의 방식으로 공격력 증가<br/>
+			* 차지액스의 오버히트 상태에 의한 공격튕김에도 발생<br/>
+		</td>
+	</tr>
+	<tr>
+		<td>야옹 비료옥 달인</td>
+		<td>슬링어 거름탄을 맞힌 몬스터가 도망칠 확률이 높아짐</td>
+	</tr>
+	<tr>
+		<td>야옹 배달술</td>
+		<td>운반 중 대시했을 때의 스태미나 소비 감소</td>
+	</tr>
+	<tr>
+		<td>야옹 단기 최면술</td>
+		<td>퀘스트 시작 후 혹은 식사 후 10분간 공격력 +9, 방어력 +15</td>
+	</tr>
+	<tr>
+		<td>야옹 탐색하기 좋은날</td>
+		<td>탐색으로 조사보고서를 입수할 확률이 높아짐</td>
+	</tr>
+	<tr>
+		<td>야옹 착지술</td>
+		<td>
+			높은 곳에서 뛰어내려도 바닥에 손을 대지 않음<br/>
+			알 운반 중 높은 곳에서 뛰어내려도 알을 떨어뜨리지 않음
+		</td>
+	</tr>
+	<tr>
+		<td>야옹 넝쿨타기 달인</td>
+		<td>
+			벽이나 넝쿨에 매달린 상태에서 회피 행동으로 소비되는<br/>
+			스태미나 양 감소
+		</td>
+	</tr>
+	<tr>
+		<td>야옹 낚시 고수</td>
+		<td>물고기를 잡을 확률이 높아짐</td>
+	</tr>
+	<tr>
+		<td>야옹 일기예보</td>
+		<td>출발한 퀘스트가 악천후가 될 확률이 높아짐</td>
+	</tr>
+	<tr>
+		<td>야옹 도주술</td>
+		<td>대형 몬스터 에게서 도망칠 때 스태미나 소비량 감소</td>
+	</tr>
+	<tr>
+		<td>야옹 장화술</td>
+		<td>지형에 의한 데미지나 피해를 줄이고 무효화</td>
+	</tr>
+	<tr>
+		<td>야옹 미움받기 고수</td>
+		<td>몬스터의 주의를 끌어서 표적이 될 확률 증가</td>
+	</tr>
+	<tr>
+		<td>야옹 튕겨내기 고수</td>
+		<td>공격이 튕겼을 때 예리도 소모량 1/2</td>
+	</tr>
+	<tr>
+		<td>야옹 매달리기 철인</td>
+		<td>벽이나 넝쿨에 매달린 상태에서 공격을 받아도 어느정도 버팀</td>
+	</tr>
+	<tr>
+		<td>야옹 방어술[소]</td>
+		<td>플레이어가 받는 데미지를 낮은 확률로 감소시킴</td>
+	</tr>
+	<tr>
+		<td>야옹 방어술[대]</td>
+		<td>플레이어가 받는 데미지를 높은 확률로 감소시킴</td>
+	</tr>
+	<tr>
+		<td>야옹 보수금 보험</td>
+		<td>퀘스트 동료 누군가의 힘이 다해도 처음 1회는 무효처리됨</td>
+	</tr>
+	<tr>
+		<td>야옹! 약한놈 덤벼!</td>
+		<td>퀘스트에 출현하는 대형 몬스터가 약해질 확률이 증가</td>
+	</tr>
+	<tr>
+		<td>야옹 해체술[소]</td>
+		<td>갈무리 횟수가 낮은 확률로 증가</td>
+	</tr>
+	<tr>
+		<td>야옹 크기자랑</td>
+		<td>큰 환경생물이 나타나기가 조금 쉬워짐</td>
+	</tr>
+	<tr>
+		<td>야옹 작기자랑</td>
+		<td>작은 환경생물이 나타나기가 조금 쉬워짐</td>
+	</tr>
+	<tr>
+		<td>야옹 생물학자</td>
+		<td>희귀한 환경생물이 나타나기가 조금 쉬워짐</td>
+	</tr>
+</tbody>
+</table>
+
+</div>
+
+<br /><h2>야옹 식재료 선택 스킬</h2><br />
+<div class="sp_table_scroll">
+
+<table border="0" class="tablesorter" name="mainTable">
+<thead>
+	<tr>
+		<th>식재료분류</th>
+		<th>조건</th>
+		<th>스킬</th>
+		<th>효과</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td rowspan="3">
+			<img src="../images/skills/meal1.png" class="skill_thumb"><br/>
+			용감
+		</td>
+		<td>X2</td>
+		<td>야옹 연마술</td>
+		<td>숫돌 사용 시 연마동작 1~3회 단축</td>
+	</tr>
+	<tr>
+		<td>X4</td>
+		<td>야옹 탑승 고수</td>
+		<td>몬스터에게 탑승하기 쉬워짐</td>
+	</tr>
+	<tr>
+		<td>X6</td>
+		<td>야옹 KO술</td>
+		<td>기절 능력이 있는 공격의 기절치 상승</td>
+	</tr>
+	<tr>
+		<td rowspan="3">
+			<img src="../images/skills/meal2.png" class="skill_thumb"><br/>
+			인내
+		</td>
+		<td>X2</td>
+		<td>야옹 낙법술</td>
+		<td>날아가는 공격을 받았을 때 자세를 고쳐세움</td>
+	</tr>
+	<tr>
+		<td>X4</td>
+		<td>야옹 버티기술</td>
+		<td>엉덩방아를 찧지 않음</td>
+	</tr>
+	<tr>
+		<td>X6</td>
+		<td>야옹 근성</td>
+		<td>
+			체력이 64이상일 때 즉사 데미지를 받아도 힘이 다하지 않고<br/>
+			체력 1남음 (1번 한정)<br/><br/>
+			* 통상스킬인 [근성Lv1]과 효과 중복되어<br/>
+			한번 힘이 다하기 전까지는 2회발동 가능<br/>
+			스킬 발동 시 통상스킬 먼저 사용됨<br/>
+			* 스킬 발동 중 체력바 근성발동 최소 체력위치에 화살표 표시됨<br/>
+			<img src="../images/skills/skill_konjo1.png"><br/>
+			< 근성 발동 유효 ><br/>
+			<img src="../images/skills/skill_konjo2.png"><br/>
+			< 근성 발동 무효 >
+		</td>
+	</tr>
+	<tr>
+		<td rowspan="3">
+			<img src="../images/skills/meal3.png" class="skill_thumb"><br/>
+			열혈
+		</td>
+		<td>X2</td>
+		<td>야옹 오뚝이술[대]</td>
+		<td>넘어졌다 일어날 때의 무적시간이 증가</td>
+	</tr>
+	<tr>
+		<td>X4</td>
+		<td>야옹 체술</td>
+		<td>회피, 가드 등 스태미나를 소비하는 행동의 스태미나 소비량 감소</td>
+	</tr>
+	<tr>
+		<td>X6</td>
+		<td>야옹 재난대처능력</td>
+		<td>
+			체력이 10이하로 남았을 때 공격력 1.35배<br/>
+			재난 대처 능력 스킬과 중복된 경우 야옹 재난대처능력만 유효
+		</td>
+	</tr>
+	<tr>
+		<td rowspan="3">
+			<img src="../images/skills/meal4.png" class="skill_thumb"><br/>
+			꾀주머니
+		</td>
+		<td>X2</td>
+		<td>야옹 몸단장 고수</td>
+		<td>방어력 DOWN 효과시간 절반으로 감소, 속성피해 빨리 회복</td>
+	</tr>
+	<tr>
+		<td>X4</td>
+		<td>야옹 의료술</td>
+		<td>체력 회복량이 10% 증가</td>
+	</tr>
+	<tr>
+		<td>X6</td>
+		<td>야옹 특수 공격술</td>
+		<td>모든 상태이상 속성치 12.5% 증가</td>
+	</tr>
+	<tr>
+		<td rowspan="3">
+			<img src="../images/skills/meal5.png" class="skill_thumb"><br/>
+			폭죽 장인
+		</td>
+		<td>X2</td>
+		<td>야옹 사격술</td>
+		<td>통상탄, 통상화살 공격력 1.1배</td>
+	</tr>
+	<tr>
+		<td>X4</td>
+		<td>야옹 포격술</td>
+		<td>
+			발리스타, 대포, 건랜스 포격, 용항포의 폭발,<br/> 
+			용격포 고정데미지 1.1배<br/>
+			차지액스 유탄병, 철갑유탄, 용격탄 고정 데미지 1.15배
+		</td>
+	</tr>
+	<tr>
+		<td>X6</td>
+		<td>야옹 화약술</td>
+		<td>대형나무통폭탄 설치 시 대형나무통폭탄G로 자동강화</td>
+	</tr>
+	<tr>
+		<td rowspan="3">
+			<img src="../images/skills/meal6.png" class="skill_thumb"><br/>
+			눈썰미
+		</td>
+		<td>X2</td>
+		<td>야옹 해체 철인</td>
+		<td>갈무리 도중 공격을 받아도 움츠리지 않음</td>
+	</tr>
+	<tr>
+		<td>X4</td>
+		<td>야옹 환산술</td>
+		<td>결과 화면에서 취득하는 조사포인트 증가</td>
+	</tr>
+	<tr>
+		<td>X6</td>
+		<td>야옹 해체술[대]</td>
+		<td>갈무리 횟수가 높은 확률로 증가</td>
+	</tr>
+	<tr>
+		<td rowspan="3">
+			<img src="../images/skills/meal7.png" class="skill_thumb"><br/>
+			운수
+		</td>
+		<td>X2</td>
+		<td>야옹 수확제</td>
+		<td>채취 포인트의 재출현 시간 단축</td>
+	</tr>
+	<tr>
+		<td>X4</td>
+		<td>복고양이의 금전운</td>
+		<td>퀘스트 클리어 시 보수금 증가</td>
+	</tr>
+	<tr>
+		<td>X6</td>
+		<td>복고양이의 행운</td>
+		<td>퀘스트 보수로 받는 아이템의 수가 늘어날 확률 증가</td>
+	</tr>
+	<tr>
+		<td rowspan="3">
+			<img src="../images/skills/meal8.png" class="skill_thumb"><br/>
+			여행 준비
+		</td>
+		<td>X2</td>
+		<td>야옹스파이크 장화</td>
+		<td>특수 지형에서도 이동 속도가 느려지지 않음</td>
+	</tr>
+	<tr>
+		<td>X4</td>
+		<td>야옹 재봉술</td>
+		<td>특수 장비의 재사용 시간이 6% 단축됨</td>
+	</tr>
+	<tr>
+		<td>X6</td>
+		<td>야옹 생명 보험</td>
+		<td>
+			퀘스트 멤버 누군가의 힘이 다했을 때 1회 무효 처리<br/>
+		    야옹 보수금 보험 스킬과 중복 적용 됨
+		</td>
+	</tr>
+	<tr>
+		<td rowspan="3">
+			<img src="../images/skills/meal9.png" class="skill_thumb"><br/>
+			개척자
+		</td>
+		<td>X2</td>
+		<td>야옹 원예술</td>
+		<td>일부 환경생물의 재출현 시간이 조금 짧아짐</td>
+	</tr>
+	<tr>
+		<td>X4</td>
+		<td>야옹 혜택술</td>
+		<td>일부 환경생물 포획 시 슬링어 탄이 떨어지게 함</td>
+	</tr>
+	<tr>
+		<td>X6</td>
+		<td>야옹 생물 박사</td>
+		<td>희귀 환경생물이 출현하기 쉬워짐</td>
+	</tr>
+</tbody>
+</table>
+
+</div>
