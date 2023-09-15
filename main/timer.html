@@ -9,6 +9,7 @@
         <script src="../js/jquery-ui.js" type="text/javascript"></script>
         <script type="text/javascript" src="../js/winwheel.js"></script>
         <script type="text/javascript" src="../js/tweenmax.min.js"></script>
+        <script type="text/javascript" src="../js/timer.js"></script>
     </head>
     <body>
         <div id="clockDiv" style="background: #000000;
@@ -21,22 +22,17 @@
             justify-content: center;
             align-items: center;
             text-align:center;">
-                <span id="clocktext" style="font-size:350px;">00:00:00</span>      
-            </div>
-    <script>
-    var textElem = document.getElementById("clocktext");
-    
-    function updateClock(){
-        var d = new Date();
-        var s = "";
-        s += (10>d.getHours() ? "0" : "") + d.getHours() + ":";
-        s += (10>d.getMinutes() ? "0" : "") + d.getMinutes() + ":";
-        s += (10>d.getSeconds() ? "0" : "") + d.getSeconds();
-        textElem.textContent = s;
-        setTimeout(updateClock, 1000 - d.getTime() % 1000 + 20);
-    }
+                
+            <form>
+                <label><input type="text" id="startMin" value="5"/>분</label>
+                <label><input type="text" id="startSec" value="55"/>초</label>
+                <input type="button" value="START" class="start-btn" onclick="startTimer()" />
+                <input type="button" value="RESET" class="reset-btn" onclick="resetTimer()" />
+            </form>
+            <hr />
+            <div id="display" class="remaining" style="font-size:350px;">00 : 00</div>
 
-    updateClock();
-        </script>
+        </div>
+
     </body>
 </html>
