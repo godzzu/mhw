@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>clock</title>
+        <title>timer</title>
         <link rel="stylesheet" href="../css/rullet.css" type="text/css" />
         <link rel="stylesheet" type="text/css" href="../css/1.10.0.jquery-ui.css">
         <script src="../js/jquery-1.7.2.min.js" type="text/javascript"></script>
@@ -22,13 +22,15 @@
             justify-content: center;
             align-items: center;
             text-align:center;">
+             
+            <div id="timerbtn_bar" style="height:150px;">
+                <label><input type="text" id="startMin" value="5" style="width:200px; height:90px; font-size:80px;"/><span style="font-size:80px;">분</span></label>
+                <label><input type="text" id="startSec" value="55" style="width:200px; height:90px; font-size:80px;"/><span style="font-size:80px;">초</span></label>
                 
-            <form>
-                <label><input type="text" id="startMin" value="5"/>분</label>
-                <label><input type="text" id="startSec" value="55"/>초</label>
-                <input type="button" value="START" class="start-btn" onclick="startTimer()" />
-                <input type="button" value="RESET" class="reset-btn" onclick="resetTimer()" />
-            </form>
+                <input type="button" style="width:150px; height:70px; font-size:40px;" value="START" class="start-btn" onclick="startTimer()" />
+                <input type="button" style="width:150px; height:70px; font-size:40px;" value="RESET" class="reset-btn" onclick="resetTimer()" />
+            </div>   
+            
             <hr />
             <div id="display" class="remaining" style="font-size:350px;">00 : 00</div>
 
